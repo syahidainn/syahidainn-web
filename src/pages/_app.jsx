@@ -4,32 +4,35 @@ import Navbar from "@/components/Navbar";
 import { Libre_Baskerville } from "next/font/google";
 import "@/styles/globals.css";
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const libre_baskerville = Libre_Baskerville({
   weight: ["400", "700"],
-  // style: ["normal", "italic"],
   subsets: ["latin"],
 });
 
 export default function App({ Component, pageProps }) {
   const [color, setColor] = useState(true);
 
-  const changeColor = () => {
-    //scroll points go up as the page is scrolled down
-    if (window.scrollY <= 0) {
-      setColor(true);
-      // console.log("true");
-      // console.log(window.scrollY);
-    } else {
-      setColor(false);
-      // console.log("false");
-      // console.log(window.scrollY);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const changeColor = () => {
+        if (window.scrollY <= 0) {
+          setColor(true);
+        } else {
+          setColor(false);
+        }
+      };
+
+      window.addEventListener("scroll", changeColor, true);
+
+      // Cleanup untuk menghapus event listener
+      return () => {
+        window.removeEventListener("scroll", changeColor, true);
+      };
     }
-  };
-  // every part of this function is necessary.
-  //It won't work if you emit the ", true" parameter
-  window.addEventListener("scroll", changeColor, true);
+  }, []);
+
   return (
     <>
       <Head>
@@ -40,7 +43,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <div className={libre_baskerville.className}>
         <header
-          className={`overflow-hidden  md:mb-0 p-5 md:p-8 fixed w-full ${
+          className={`overflow-hidden md:mb-0 p-5 md:p-8 fixed w-full ${
             color ? "bg-transparent" : "bg-black"
           }`}
         >
