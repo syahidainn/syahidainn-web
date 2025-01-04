@@ -11,6 +11,7 @@ export default function Home() {
       <section className="p-20 flex flex-col gap-16">
         <div className="flex flex-row gap-20">
           <div className="flex flex-col gap-5 mx-auto">
+            <h1 className="text-sm text-red-500">contoh</h1>
             <h1 className="text-4xl text-center">Syahida Inn</h1>
             <hr />
             <p className="max-w-lg text-lg text-center">
