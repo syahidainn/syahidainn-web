@@ -43,8 +43,8 @@ export default function App({ Component, pageProps }) {
       </Head>
       <div className={libre_baskerville.className}>
         <header
-          className={`overflow-hidden md:mb-0 p-5 md:p-8 fixed w-full ${
-            color ? "bg-transparent" : "bg-black"
+          className={`bg-white/80 backdrop-blur-md text-black uppercase overflow-hidden md:mb-0 p-5 md:p-8 fixed w-full ${
+            color ? "" : "bg-black text-white"
           }`}
         >
           <Navbar />

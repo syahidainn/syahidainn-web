@@ -12,6 +12,9 @@ export default {
         foreground: "var(--foreground)",
         primary: "#7E7373",
       },
+      objectPosition: {
+        "center-top": "center top",
+      },
     },
   },
   plugins: [],
