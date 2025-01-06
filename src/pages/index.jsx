@@ -1,4 +1,5 @@
 import RoomsCardHome from "@/components/RoomsCardHome";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -6,7 +7,13 @@ export default function Home() {
       className={` flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)]`}
     >
       <section>
-        <div className="bg-gray-300 h-72 w-full">Hero</div>
+        <Image
+          src="/assets/gedung.jpg"
+          alt="gedung syahidainn"
+          width={1920}
+          height={1080}
+          className="object-cover max-h-[50rem] w-full object-center-top"
+        />
       </section>
       <section className="p-20 flex flex-col gap-16">
         <div className="flex flex-row gap-20">
