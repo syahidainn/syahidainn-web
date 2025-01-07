@@ -1,3 +1,5 @@
+import { libre_baskerville } from "@/pages/fonts";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -14,6 +16,10 @@ export default {
       },
       objectPosition: {
         "center-top": "center top",
+      },
+      fontFamily: {
+        libre_baskerville: "var(--font-libre_baskerville)",
+        libre_caslon_text: "var(--font-libre_caslon_text)",
       },
     },
   },
