@@ -1,5 +1,3 @@
-import { libre_baskerville } from "@/pages/fonts";
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
