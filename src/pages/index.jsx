@@ -7,18 +7,29 @@ export default function Home() {
       className={` flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)]`}
     >
       <section>
+        <div className="bg-black/20 h-[35rem] w-full absolute flex items-center justify-center">
+          <div className="flex gap-3 flex-col justify-center text-white mt-20">
+            <h1 className=" m-auto text-center text-4xl font-libre_baskerville">
+              The Best Hotel in Ciputat
+            </h1>
+            <p className="text-sm m-auto  text-center max-w-sm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+              minima ipsum maxime omnis id amet rerum quam adipisci veniam
+              beatae?
+            </p>
+          </div>
+        </div>
         <Image
-          src="/assets/gedung.jpg"
+          src="/assets/syahidainn.jpg"
           alt="gedung syahidainn"
-          width={1920}
-          height={1080}
-          className="object-cover max-h-[50rem] w-full object-center-top"
+          width={6464}
+          height={4320}
+          className="object-cover max-h-[35rem] w-full object-center"
         />
       </section>
       <section className="p-20 flex flex-col gap-16">
         <div className="flex flex-row gap-20">
           <div className="flex flex-col gap-5 mx-auto">
-            <h1 className="text-sm text-cen">contoh kedua</h1>
             <h1 className="text-4xl text-center">Syahida Inn</h1>
             <hr />
             <p className="max-w-lg text-lg text-center">
