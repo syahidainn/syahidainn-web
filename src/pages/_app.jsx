@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import { libre_baskerville, libre_caslon_text } from "./fonts";
+import { libre_baskerville, libre_caslon_text } from "../lib/fonts";
 
 export default function App({ Component, pageProps }) {
   const [color, setColor] = useState(true);
