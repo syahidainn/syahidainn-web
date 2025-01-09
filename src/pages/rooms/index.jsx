@@ -9,14 +9,23 @@ export default function Rooms() {
       tipe: "Deluxe Double",
       desc: "Nikmati pengalaman menginap yang menenangkan di Deluxe Double Room, tempat di mana kesederhanaan bertemu dengan keanggunan...",
       logoFacility: "/assets/icon/bed.png",
-      textFacility: "Twin Bed"
+      logoFacility1: "/assets/icon/guest.png",
+      logoFacility2: "/assets/icon/luas.png",
+      textFacility: "Twin Bed",
+      textFacility1: "2 Guests",
+      textFacility2: "42㎡ – 45㎡"
     },
     {
       id: 2,
       imageCard: "/assets/Deluxe Triple.png",
       tipe: "Deluxe Triple",
       desc: "Memberikan pengalaman menginap yang tak terlupakan dengan fasilitas unggulan dengan tiga tempat tidur yang nyaman dan...",
-      logoFacility: "/assets/icon/bed.png"
+      logoFacility: "/assets/icon/bed.png",
+      logoFacility1: "/assets/icon/guest.png",
+      logoFacility2: "/assets/icon/luas.png",
+      textFacility: "Three Bed",
+      textFacility1: "3 Guests",
+      textFacility2: "42㎡ – 45㎡"
     },
 
     {
@@ -24,7 +33,12 @@ export default function Rooms() {
       imageCard: "/assets/Superior Double.png",
       tipe: "Superior Double",
       desc:"Pilihan ideal bagi Anda yang menginginkan kenyamanan berkelas dengan harga yang bersaing. Superior Room dirancang dengan gaya modern...",
-      logoFacility: "/assets/icon/bed.png"
+      logoFacility: "/assets/icon/bed.png",
+      logoFacility1: "/assets/icon/guest.png",
+      logoFacility2: "/assets/icon/luas.png",
+      textFacility: "Twin Bed",
+      textFacility1: "2 Guests",
+      textFacility2: "42㎡ – 45㎡"
     },
 
     {
@@ -32,7 +46,12 @@ export default function Rooms() {
       imageCard: "/assets/VIP Room.png",
       tipe: "VIP Room",
       desc:"Menghadirkan kemewahan untuk memberikan pengalaman eksklusif bagi Anda yang menginginkan kenyamanan dan layanan terbaik. Dengan desain...",
-      logoFacility: "/assets/icon/bed.png"
+      logoFacility: "/assets/icon/bed.png",
+      logoFacility1: "/assets/icon/guest.png",
+      logoFacility2: "/assets/icon/luas.png",
+      textFacility: "King Bed",
+      textFacility1: "2 Guests",
+      textFacility2: "42㎡ – 45㎡"
     }
   ];
 
@@ -49,7 +68,11 @@ export default function Rooms() {
               tipe={list.tipe}
               desc={list.desc}
               logoFacility={list.logoFacility}
+              logoFacility1={list.logoFacility1}
+              logoFacility2={list.logoFacility2}
               textFacility={list.textFacility}
+              textFacility1={list.textFacility1}
+              textFacility2={list.textFacility2}
             />
           ))}
           {
