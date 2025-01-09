@@ -15,6 +15,10 @@ export default {
       objectPosition: {
         "center-top": "center top",
       },
+      fontFamily: {
+        libre_baskerville: "var(--font-libre_baskerville)",
+        libre_caslon_text: "var(--font-libre_caslon_text)",
+      },
     },
   },
   plugins: [],

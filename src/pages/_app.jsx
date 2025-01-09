@@ -1,15 +1,10 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { Libre_Baskerville } from "next/font/google";
 import "@/styles/globals.css";
 import Head from "next/head";
 import { useState, useEffect } from "react";
-
-const libre_baskerville = Libre_Baskerville({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-});
+import { libre_baskerville, libre_caslon_text } from "../lib/fonts";
 
 export default function App({ Component, pageProps }) {
   const [color, setColor] = useState(true);
@@ -26,7 +21,6 @@ export default function App({ Component, pageProps }) {
 
       window.addEventListener("scroll", changeColor, true);
 
-      // Cleanup untuk menghapus event listener
       return () => {
         window.removeEventListener("scroll", changeColor, true);
       };
@@ -41,10 +35,14 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <div className={libre_baskerville.className}>
+      <div
+        className={`${libre_baskerville.variable} ${libre_caslon_text.variable}`}
+      >
         <header
-          className={`bg-white/80 backdrop-blur-md text-black uppercase overflow-hidden md:mb-0 p-5 md:p-8 fixed w-full ${
-            color ? "" : "bg-black text-white"
+          className={` border-b-2 border-b-black z-50 text-black uppercase overflow-hidden md:mb-0 p-7 px-32 fixed w-full ${
+            color
+              ? "bg-white/80 backdrop-blur-sm"
+              : "bg-white/100 backdrop-blur-sm text-black"
           }`}
         >
           <Navbar />
