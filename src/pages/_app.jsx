@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
         className={`${libre_baskerville.variable} ${libre_caslon_text.variable}`}
       >
         <header
-          className={` border-b-2 border-b-black z-50 text-black uppercase overflow-hidden md:mb-0 p-7 fixed w-full ${
+          className={` border-b-2 border-b-black z-50 text-black uppercase overflow-hidden md:mb-0 p-7 px-32 fixed w-full ${
             color
               ? "bg-white/80 backdrop-blur-sm"
               : "bg-white/100 backdrop-blur-sm text-black"
