@@ -27,12 +27,15 @@ export default function Home() {
           className="object-cover max-h-[35rem] w-full object-center"
         />
       </section>
-      <section className="p-20 flex flex-col gap-16">
+      <section className="p-32 flex flex-col gap-16">
         <div className="flex flex-row gap-20">
-          <div className="flex flex-col gap-5 mx-auto">
-            <h1 className="text-4xl text-center">Syahida Inn</h1>
-            <hr />
-            <p className="max-w-lg text-lg text-center">
+          <div className="flex flex-col gap-5">
+            {/* <Image src="/assets/LineBorder.png" width={100} height={100} /> */}
+            <h1 className="text-3xl font-libre_baskerville">Syahida Inn</h1>
+            <p className="max-w-lg text-sm">
+              Welcome to Syahida Inn – Redefining Hospitality Since 2003
+            </p>
+            <p className="max-w-lg text-sm">
               Syahida Inn telah melayani wisatawan eksklusif sejak tahun 1946
               dengan menjadi tempat pertemuan para kepala negara, lokasi pidato
               yang mengubah dunia, serta ilham kisah romansa paling terkenal
@@ -41,6 +44,7 @@ export default function Home() {
               budaya, serta pesona duniawi yang ditemukan di setiap perjalanan.
             </p>
           </div>
+          <div className="w-[1px] bg-black h-[28rem]"></div>
         </div>
       </section>
       <section>

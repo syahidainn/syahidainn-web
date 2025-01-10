@@ -18,6 +18,7 @@ export default {
       fontFamily: {
         libre_baskerville: "var(--font-libre_baskerville)",
         libre_caslon_text: "var(--font-libre_caslon_text)",
+        poppins: "var(--font-poppins)",
       },
     },
   },
