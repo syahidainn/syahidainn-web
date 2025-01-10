@@ -1,4 +1,9 @@
+import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
+
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <div className="flex flex-row xl:gap-8 justify-between w-full lg:justify-center gap-5 items-center text-xs font-light tracking-wide font-libre_caslon_text">
       {/* mobile menu */}
@@ -17,11 +22,46 @@ export default function Navbar() {
         </p>
       </div>
       <div className="flex flex-row xl:gap-8 gap-5 justify-between text-center mx-auto">
-        <p className="hidden lg:block">Home</p>
-        <p className="hidden lg:block">Rooms</p>
-        <p className="hidden lg:block">Meetings & Events</p>
-        <p className="hidden lg:block">Dinning</p>
-        <p className="hidden lg:block">Gallery</p>
+        <Link
+          href={"/"}
+          className={`hidden lg:block hover:border-b-[1px] hover:border-black  py-2 ${
+            pathname === "/" ? "border-b-[1px] border-black " : ""
+          }`}
+        >
+          Home
+        </Link>
+        <Link
+          href={"/rooms"}
+          className={`hidden lg:block hover:border-b-[1px] hover:border-black py-2 ${
+            pathname?.startsWith("/rooms") ? "border-b-[1px] border-black" : ""
+          }`}
+        >
+          Rooms
+        </Link>
+        <Link
+          href={"/meetings&events"}
+          className={`hidden lg:block hover:border-b-[1px] hover:border-black   py-2 ${
+            pathname === "/meetings&events" ? "border-b-[1px] border-black" : ""
+          }`}
+        >
+          Meetings & Events
+        </Link>
+        <Link
+          href={"/dinning"}
+          className={`hidden lg:block hover:border-b-[1px] hover:border-black   py-2 ${
+            pathname === "/dinning" ? "border-b-[1px] border-black" : ""
+          }`}
+        >
+          Dinning
+        </Link>
+        <Link
+          href={"/gallery"}
+          className={`hidden lg:block hover:border-b-[1px] hover:border-black   py-2 ${
+            pathname === "/gallery" ? "border-b-[1px] border-black" : ""
+          }`}
+        >
+          Gallery
+        </Link>
       </div>
       <button className="uppercase border-black border-[1px] bg-primary text-white leading-loose p-2 px-3 lg:ml-auto ml-0 text-xs font-normal">
         Book Now
