@@ -19,7 +19,7 @@ export const libre_caslon_text = Libre_Caslon_Text({
 });
 
 export const poppins = Poppins({
-  weight: ["400", "700", "800", "900"],
+  weight: ["100", "200", "300", "400", "700", "800", "900"],
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--font-poppins",

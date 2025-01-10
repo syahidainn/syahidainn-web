@@ -11,9 +11,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "#7E7373",
+        secondary: "#695441",
       },
       objectPosition: {
         "center-top": "center top",
+        "center-bottom": "center bottom",
       },
       fontFamily: {
         libre_baskerville: "var(--font-libre_baskerville)",
