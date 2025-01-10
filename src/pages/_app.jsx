@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import { libre_baskerville, libre_caslon_text } from "../lib/fonts";
+import { libre_baskerville, libre_caslon_text, poppins } from "../lib/fonts";
 
 export default function App({ Component, pageProps }) {
   const [color, setColor] = useState(true);
@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
         ></link>
       </Head>
       <div
-        className={`${libre_baskerville.variable} ${libre_caslon_text.variable}`}
+        className={`${libre_baskerville.variable} ${libre_caslon_text.variable} ${poppins.variable}`}
       >
         <header
           className={` border-b-2 border-b-black z-50 text-black uppercase overflow-hidden md:mb-0 p-7 px-32 fixed w-full ${
