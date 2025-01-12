@@ -34,6 +34,10 @@ export default function RoomsItem({
     setCurrentIndex((prevIndex) => (prevIndex + 1) % rooms.length);
   };
 
+  const handleImageClick = (index) => {
+    setCurrentIndex(index % rooms.length);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Section untuk cover kamar */}
@@ -143,7 +147,7 @@ export default function RoomsItem({
           <div className="w-full sm:w-2/3 p-5 flex items-center justify-start relative overflow-hidden">
             <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${(currentIndex % rooms.length) * 50}%)` }}>
               {rooms.concat(rooms).map((room, index) => (
-                <div key={index} className="w-full sm:w-2/4 flex-shrink-0 relative p-2">
+                <div key={index} className="w-full sm:w-2/4 flex-shrink-0 relative p-2" onClick={() => handleImageClick(index)}>
                   <div className={`bg-white shadow-md overflow-hidden ${index % rooms.length !== currentIndex % rooms.length ? 'opacity-50 scale-90' : ''}`}>
                     <Image src={`/assets/${room.image}`} width={1000} height={1000} alt={room.type} />
                     <div className="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-50 p-1 w-full mx-auto">
