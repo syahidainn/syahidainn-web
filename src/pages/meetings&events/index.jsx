@@ -72,7 +72,7 @@ export default function MeetingEvents() {
       </section>
 
       <section>
-        <Container className="sm:pt-0">
+        <Container className="sm:pt-2">
           <div className="flex flex-col items-center">
             <div className="flex flex-col w-fit">
               <h1 className="text-3xl text-center font-libre_baskerville">
@@ -117,7 +117,7 @@ export default function MeetingEvents() {
       </section>
 
       <section>
-        <Container>
+        <Container className="sm:pt-2">
           <div className="flex flex-col items-center gap-14">
             <div className="flex flex-col w-full">
               <h1 className="text-3xl text-center font-libre_baskerville">
