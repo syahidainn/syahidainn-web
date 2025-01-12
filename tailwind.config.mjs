@@ -12,6 +12,7 @@ export default {
         foreground: "var(--foreground)",
         primary: "#7E7373",
         secondary: "#695441",
+        gold: "#AE9578",
       },
       objectPosition: {
         "center-top": "center top",
