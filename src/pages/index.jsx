@@ -33,6 +33,25 @@ export default function Home() {
     },
   ];
 
+  const rooms_home = [
+    {
+      name: "Delux Double",
+      img: "/assets/Deluxe Double.png",
+    },
+    {
+      name: "Delux Triple",
+      img: "/assets/Deluxe Double.png",
+    },
+    {
+      name: "Superior Room",
+      img: "/assets/Superior Double 2.jpg",
+    },
+    {
+      name: "VIP Room",
+      img: "/assets/VIP Aset 1.jpg",
+    },
+  ];
+
   return (
     <div
       className={` flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)]`}
@@ -58,7 +77,7 @@ export default function Home() {
           className="object-cover max-h-[37rem] w-full object-center"
         />
       </section>
-      <section className="sm:p-32 sm:py-20 flex flex-col gap-16">
+      <section className="sm:p-40 sm:py-20 flex flex-col gap-16 items-center">
         <div className="flex flex-row gap-20">
           <Image
             src="/assets/LineBorder.svg"
@@ -108,11 +127,11 @@ export default function Home() {
           <p className="text-white text-lg m-auto">video</p>
         </div>
       </section>
-      <section className="sm:py-20 flex flex-col gap-16 sm:p-32  mx-auto">
+      <section className="sm:py-20 flex flex-col gap-16 sm:p-40  mx-auto">
         <h1 className="text-secondary px-3 mx-auto text-3xl text-center w-fit font-libre_baskerville">
           Facilities
         </h1>
-        <div className="flex flex-row flex-wrap justify-center max-w-lg gap-16">
+        <div className="flex flex-row flex-wrap justify-center max-w-xl gap-20">
           {facilities_home.map((facility) => (
             <div className="flex flex-col gap-4 " key={facility.name}>
               <Image
@@ -128,7 +147,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="sm:py-20 flex flex-col gap-16 sm:p-32 bg-[#F8F4EE]">
+      <section className="sm:py-20 flex flex-col gap-16 sm:p-40 bg-[#F8F4EE]">
         <div className="flex flex-row items-center mx-auto">
           <div className="w-32 h-[1px] bg-black"></div>
           <h1 className=" px-3 text-3xl text-center w-fit font-libre_baskerville">
@@ -136,17 +155,16 @@ export default function Home() {
           </h1>
           <div className="w-32 h-[1px] bg-black"></div>
         </div>
-        <div className="flex gap-5 flex-row justify-between flex-wrap">
-          <RoomsCardHome />
-          <RoomsCardHome />
-          <RoomsCardHome />
-          <RoomsCardHome />
+        <div className="flex gap-y-5 flex-row justify-between flex-wrap">
+          {rooms_home.map((room) => (
+            <RoomsCardHome key={room.name} name={room.name} img={room.img} />
+          ))}
         </div>
-        <button className="mx-auto text-sm p-4 py-3 border-secondary border-2 w-fit text-secondary font-poppins uppercase">
+        <button className="hover:bg-secondary hover:text-white mx-auto text-sm p-4 py-3 border-secondary border-2 w-fit text-secondary font-poppins uppercase">
           Explore Rooms
         </button>
       </section>
-      <section className="sm:py-20 flex flex-col gap-16 sm:p-32">
+      <section className="sm:py-20 flex flex-col gap-16 sm:p-40">
         <div className="flex flex-row items-center mx-auto">
           <div className="w-32 h-[1px] bg-black"></div>
           <h1 className=" px-3 text-3xl text-center w-fit font-libre_baskerville">
@@ -166,7 +184,7 @@ export default function Home() {
               sapiente, corrupti illum blanditiis, aliquam provident culpa
               deleniti?
             </p>
-            <button className="p-4 py-3 text-sm uppercase font-poppins border-white border-2 w-fit text-white">
+            <button className="hover:bg-white p-4 py-3 text-sm uppercase font-poppins border-white border-2 w-fit text-white">
               Learn More
             </button>
           </div>
@@ -204,7 +222,7 @@ export default function Home() {
             height={2160}
             className="w-full object-cover h-[37rem] object-bottom"
           />
-          <div className="flex flex-col gap-10 bg-[linear-gradient(90deg,_rgba(58,49,38,0.85)_0%,_rgba(160,135,105,0.85)_100%)]  w-[28rem] relative bottom-80  ml-auto mr-32 p-10 text-white">
+          <div className="flex flex-col gap-10 bg-[#221111]/80  w-[28rem] relative bottom-80  ml-auto mr-32 p-10 text-white">
             <h2 className="text-3xl text-center font-libre_baskerville">
               Restaurant
             </h2>
@@ -217,7 +235,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="sm:py-20 flex flex-col gap-16 sm:p-32">
+      <section className="sm:py-20 flex flex-col gap-16 sm:p-40">
         <div className="flex flex-row items-center mx-auto">
           <div className="w-32 h-[1px] bg-black"></div>
           <h1 className=" px-3 text-3xl text-center w-fit font-libre_baskerville">

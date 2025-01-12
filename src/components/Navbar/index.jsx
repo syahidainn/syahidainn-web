@@ -5,7 +5,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-row xl:gap-8 justify-between w-full lg:justify-center gap-5 items-center text-xs font-light tracking-wide font-libre_caslon_text">
+    <div className="flex flex-row xl:gap-8 justify-between w-full lg:justify-center gap-5 items-center text-sm font-light tracking-wide font-libre_caslon_text">
       {/* mobile menu */}
       <div className="lg:hidden">
         <i className="bx bx-menu text-black text-4xl"></i>
@@ -63,7 +63,7 @@ export default function Navbar() {
           Gallery
         </Link>
       </div>
-      <button className="uppercase border-black border-[1px] bg-primary text-white leading-loose p-2 px-3 lg:ml-auto ml-0 text-xs font-normal">
+      <button className="uppercase bg-primary text-white leading-loose p-2 px-3 lg:ml-auto ml-0 text-xs font-normal">
         Book Now
       </button>
     </div>
