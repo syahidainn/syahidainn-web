@@ -50,22 +50,33 @@ export default function RoomsItem({
 
       <div className="p-8 pb-20 sm:p-32">
         {/* Section untuk deskripsi kamar */}
-        <section className="flex flex-col sm:flex-row gap-14 mb-10 mt-45">
-          <div className="w-full sm:w-1/2 h-[20rem] sm:h-[30rem]">
-            <Image src={`/assets/${imageCard}`} layout="responsive" width={500} height={500} />
+        <section className="flex flex-col sm:flex-row gap-20 mb-10 mt-45 relative">
+          <div className="w-full sm:w-1/2 h-[15rem] sm:h-[30rem] relative">
+            <div className="absolute -left-4 -top-4 w-full h-full z-0 hidden sm:block">
+              <Image src={`/assets/${imageCard}`} layout="responsive" width={500} height={500} className="opacity-50" />
+            </div>
+            <div className="relative z-10">
+              <Image src={`/assets/${imageCard}`} layout="responsive" width={500} height={500} className="w-full h-full object-cover" />
+            </div>
           </div>
           <div className="space-y-10 w-full sm:w-1/2 flex flex-col justify-between">
             <div>
               <h1 className="text-2xl sm:text-4xl font-libre_baskerville">{tipe}</h1>
               <p className="text-base sm:text-lg text-black font-poppins italic font-medium mt-5">{katakata}</p>
               <p className="text-sm sm:text-lg text-justify font-poppins font-light mt-5">{desc}</p>
-              <div className="flex flex-col sm:flex-row gap-3 items-center mt-5">
-                <Image src={logoFacility1} width={50} height={50} />
-                <p className="py-2 px-1 font-inter">{textFacility1}</p>
-                <Image src={logoFacility2} width={40} height={40} />
-                <p className="py-2 px-1">{textFacility2}</p>
-                <Image src={logoFacility3} width={30} height={30} />
-                <p className="py-2 px-1">{textFacility3}</p>
+              <div className="flex flex-row flex-wrap gap-3 items-center mt-5">
+                <div className="flex items-center gap-2">
+                  <Image src={logoFacility1} width={30} height={30} className="w-6 sm:w-8 lg:w-10" />
+                  <p className="text-xs sm:text-base py-2 px-1 font-inter">{textFacility1}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Image src={logoFacility2} width={30} height={30} className="w-6 sm:w-8 lg:w-10" />
+                  <p className="text-xs sm:text-base py-2 px-1">{textFacility2}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Image src={logoFacility3} width={30} height={30} className="w-5 sm:w-8 lg:w-7" />
+                  <p className="text-xs sm:text-base py-2 px-1">{textFacility3}</p>
+                </div>
               </div>
               <h2 className="text-xl sm:text-2xl font-poppins text-center sm:text-left mt-5">
                 <span className="font-bold">{price.split(' ')[0]} {price.split(' ')[1]}</span> <span className="font-light">{price.split(' ').slice(2).join(' ')}</span>
@@ -80,8 +91,8 @@ export default function RoomsItem({
         </section>
 
         {/* Section untuk check-in/out */}
-        <section className="flex flex-col sm:flex-row gap-20 mt-5 mb-40 w-full bg-[#F8F4EE] p-5">
-          <div className="w-full h-[100px] p-5">
+        <section className="flex flex-col sm:flex-row gap-20 mt-5 mb-40 w-screen -mx-8 sm:-mx-32 bg-[#F8F4EE] p-5">
+          <div className="w-full h-auto p-5">
             <div className="flex flex-col sm:flex-row gap-5 text-center relative w-full items-center justify-center">
               <div className="flex-1 flex items-center justify-center gap-2 sm:gap-4">
                 <Image src="/assets/icon/clock.svg" width={30} height={30} className="sm:w-[44px] sm:h-[44px]" />
@@ -120,7 +131,7 @@ export default function RoomsItem({
           <h2 className="text-2xl sm:text-4xl text-center font-libre_baskerville">Gallery Room</h2>
           <div className="flex flex-col sm:flex-row gap-2 mt-0">
             <div className="w-full sm:w-1/3 h-[20rem] sm:h-[30rem] bg-gray-300">
-              <Image src={galleryImages[0]} layout="responsive" width={1000} height={500} alt="Gallery Image 1" />
+              <Image src={galleryImages[0]} layout="responsive" width={50} height={50} alt="Gallery Image 1" />
             </div>
             <div className="grid grid-cols-2 gap-2 w-full sm:w-2/3">
               {galleryImages.slice(1, 7).map((image, index) => (
@@ -133,15 +144,23 @@ export default function RoomsItem({
         </section>
 
         {/* Section untuk ruangan lainnya */}
-        <section className="flex flex-col sm:flex-row gap-5 mb-10 w-full p-5 mb-28">
+        <section className="flex flex-col sm:flex-row gap-5 w-full p-5">
           <div className="w-full sm:w-1/3 h-full p-5">
             <h1 className="text-3xl sm:text-5xl mb-5 font-libre_baskerville font-regular">More Rooms</h1>
             <p className="text-base sm:text-lg mb-5 font-poppins font-light text-justify">
               Syahida Inn menghadirkan berbagai pilihan kamar yang dirancang untuk memenuhi kebutuhan Anda, mulai dari perjalanan bisnis hingga liburan yang sempurna.
             </p>
             <div className="flex flex-row gap-5 justify-center sm:justify-start">
-              <button onClick={handlePrev} className="text-3xl sm:text-5xl">{'<'}</button>
-              <button onClick={handleNext} className="text-3xl sm:text-5xl">{'>'}</button>
+              <button onClick={handlePrev} className="text-3xl sm:text-5xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-10">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                </svg>
+              </button>
+              <button onClick={handleNext} className="text-3xl sm:text-5xl" >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-10">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
             </div>
           </div>
           <div className="w-full sm:w-2/3 p-5 flex items-center justify-start relative overflow-hidden">
@@ -159,27 +178,27 @@ export default function RoomsItem({
             </div>
           </div>
         </section>
-
-        {/* Section untuk alamat dan reservasi */}
-        <section className="flex flex-col sm:flex-row gap-5 mb-10 w-screen -mx-8 sm:-mx-32 -mb-40 bg-[#F8F4EE] p-5 h-auto sm:h-[200px]">
-          <div className="w-full h-full p-5 pl-5 sm:pl-20">
-            <h1 className="text-lg font-bold mb-5">Address</h1>
-            <div className="flex items-center">
-              <Image src="/assets/icon/lokasi.svg" width={24} height={24} className="mr-2" />
-              <p className="text-base">
-                Jl. Kertamukti No.5, Cireundeu, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15412
-              </p>
-            </div>
-          </div>
-          <div className="w-full h-full p-5 pl-5 sm:pl-20">
-            <h2 className="text-lg font-bold mb-5">Call to reserve</h2>
-            <div className="flex items-center">
-              <Image src="/assets/icon/Phone.svg" width={24} height={24} className="mr-2" />
-              <p className="text-base">+62-823-117-1400</p>
-            </div>
-          </div>
-        </section>
       </div>
+
+      {/* Section untuk alamat dan reservasi */}
+      <section className="flex flex-col sm:flex-row gap-5 mb-10 w-full bg-[#F8F4EE] p-5 h-auto sm:h-[200px]">
+        <div className="w-full h-full p-5 pl-5 sm:pl-20">
+          <h1 className="text-lg font-bold mb-5">Address</h1>
+          <div className="flex items-center">
+            <Image src="/assets/icon/lokasi.svg" width={24} height={24} className="mr-2" />
+            <p className="text-base font-poppins">
+              Jl. Kertamukti No.5, Cireundeu, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15412
+            </p>
+          </div>
+        </div>
+        <div className="w-full h-full p-5 pl-5 sm:pl-20">
+          <h2 className="text-lg font-bold mb-5">Call to reserve</h2>
+          <div className="flex items-center">
+            <Image src="/assets/icon/Phone.svg" width={24} height={24} className="mr-2" />
+            <p className="text-base font-poppins">+62-823-117-1400</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
