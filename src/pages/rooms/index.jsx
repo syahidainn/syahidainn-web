@@ -10,7 +10,7 @@ export default function Rooms() {
       desc: "Nikmati pengalaman menginap yang menenangkan di Deluxe Double Room, tempat di mana kesederhanaan bertemu dengan keanggunan...",
       logoFacility: "/assets/icon/bed.png",
       logoFacility1: "/assets/icon/guest.png",
-      logoFacility2: "/assets/icon/luas.png",
+      logoFacility2: "/assets/icon/ukuran.png",
       textFacility: "Twin Bed",
       textFacility1: "2 Guests",
       textFacility2: "42㎡ – 45㎡"
@@ -56,13 +56,18 @@ export default function Rooms() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="bg-gray-300 h-72 w-full">Hero</div>
-      <main className="p-8 pb-20 flex flex-col gap-16 sm:p-32">
-        <div className="flex flex-col gap-10">
-          <h1 className="text-5xl text-center">Rooms</h1>
+    <div className="flex flex-col min-h-screen font-poppins bg-[#F9F9F9] text-black">
+      <div className="bg-gray-300 h-48 md:h-72 w-full">Hero</div>
+      <main className="p-4 md:p-8 pb-20 flex flex-col gap-8 md:gap-16 sm:p-8 md:pb-32">
+        <div className="flex flex-col gap-6 md:gap-10">
+          <h1 className="text-3xl md:text-5xl text-center font-libre_baskerville">Our Rooms</h1>
+          <hr className="bg-black border-0 my-4 h-1 mx-auto w-24 md:w-48"/>
+          <p className="text-center text-base md:text-lg">Nikmati pengalaman menginap yang nyaman, elegan, dan mewah dalam setiap pilihan 
+            kamar kami dengan fasilitas yang dirancang untuk menciptakan suasana menyenangkan 
+            dan berkesan.</p>
           {lists.map((list) => (
             <RoomsCard
+              key={list.id}
               id={list.id}
               imageCard={list.imageCard}
               tipe={list.tipe}
@@ -75,18 +80,10 @@ export default function Rooms() {
               textFacility2={list.textFacility2}
             />
           ))}
-          {
-          /* <RoomsCard
-            classname={"flex-row-reverse justify-between"}
-            imageCard={"/assets/room2.jpg"}
-          />
-          <RoomsCard />
-          <RoomsCard classname={"flex-row-reverse justify-between"} /> */}
         </div>
         <div>
           <Review />
         </div>
-        <div>Gallery</div>
       </main>
     </div>
   );
