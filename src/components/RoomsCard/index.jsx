@@ -19,16 +19,16 @@ export default function RoomsCard({ classname, imageCard, id, tipe, desc, logoFa
             <p className="text-sm md:text-base">{textFacility}</p>
           </div>
           <div className="flex items-center gap-2">
-            <Image src={logoFacility1} width={50} height={50} className="w-8 h-8 md:w-10 md:h-10" />
+            <Image src={logoFacility1} width={40} height={40} className="w-8 h-8 md:w-10 md:h-10" />
             <p className="text-sm md:text-base">{textFacility1}</p>
           </div>
           <div className="flex items-center gap-2">
-            <Image src={logoFacility2} width={50} height={50} className="w-8 h-8 md:w-10 md:h-10" />
+            <Image src={logoFacility2} width={30} height={30} className="w-8 h-8 md:w-10 md:h-10" />
             <p className="text-sm md:text-base">{textFacility2}</p>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
-          <button className="p-2 md:p-4 font-semibold border-[#AE9578] border-2 text-[#AE9578]" onClick={() => router.push(`/rooms/${id}`)}>click</button>
+          <button className="p-2 md:p-4 font-semibold border-[#AE9578] border-2 text-white bg-[#AE9578]" onClick={() => router.push(`/rooms/${id}`)}>click</button>
           <button className="p-2 md:p-4 font-bold border-black border-2 text-black">Explore Rooms</button>
         </div>
       </div>
