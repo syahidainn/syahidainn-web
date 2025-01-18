@@ -1,7 +1,13 @@
 import RoomsCardHome from "@/components/RoomsCardHome";
 import Image from "next/image";
+import { useRef } from "react";
 
 export default function Home() {
+  const sectionRef = useRef();
+
+  const scrollToSection = () => {
+    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   const facilities_home = [
     {
       name: "Free Parking",
@@ -36,11 +42,11 @@ export default function Home() {
   const rooms_home = [
     {
       name: "Delux Double",
-      img: "/assets/Deluxe Double.png",
+      img: "/assets/Superior Double 2.jpg",
     },
     {
       name: "Delux Triple",
-      img: "/assets/Deluxe Double.png",
+      img: "/assets/SUPERIOR Aset 1.jpg",
     },
     {
       name: "Superior Room",
@@ -56,9 +62,9 @@ export default function Home() {
     <div
       className={` flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)]`}
     >
-      <section>
-        <div className="bg-black/30 h-[37rem] w-full absolute flex items-center justify-center">
-          <div className="flex gap-3 flex-col justify-center text-white mt-20">
+      <section className="max-h-screen">
+        <div className="bg-black/30 h-screen w-full absolute flex items-center justify-center">
+          <div className="flex gap-3 flex-col justify-center text-white relative top-[5vh] bottom-0">
             <h1 className=" m-auto text-center text-4xl font-libre_baskerville">
               The Best Hotel in Ciputat
             </h1>
@@ -74,10 +80,20 @@ export default function Home() {
           alt="gedung syahidainn"
           width={6464}
           height={4320}
-          className="object-cover max-h-[37rem] w-full object-center"
+          className="object-cover h-screen w-full object-center"
         />
+        <button
+          onClick={() => scrollToSection()}
+          className="flex left-0 right-0 mx-auto relative bottom-[10vh] "
+        >
+          {" "}
+          <i className="w-fit bx bx-chevron-down text-5xl text-white animate-bounce hover:bg-black/50 hover:rounded-full hover:delay-100" />
+        </button>
       </section>
-      <section className="sm:p-40 sm:py-20 flex flex-col gap-16 items-center">
+      <section
+        className="sm:p-40 sm:py-28 flex flex-col gap-16 items-center"
+        ref={sectionRef}
+      >
         <div className="flex flex-row gap-20">
           <Image
             src="/assets/LineBorder.svg"
@@ -127,7 +143,7 @@ export default function Home() {
           <p className="text-white text-lg m-auto">video</p>
         </div>
       </section>
-      <section className="sm:py-20 flex flex-col gap-16 sm:p-40  mx-auto">
+      <section className="sm:py-24 flex flex-col gap-16 sm:p-40  mx-auto">
         <h1 className="text-secondary px-3 mx-auto text-3xl text-center w-fit font-libre_baskerville">
           Facilities
         </h1>
@@ -147,7 +163,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="sm:py-20 flex flex-col gap-16 sm:p-40 bg-[#F8F4EE]">
+      <section className="sm:py-24 flex flex-col gap-16 sm:p-40 bg-[#F8F4EE]">
         <div className="flex flex-row items-center mx-auto">
           <div className="w-32 h-[1px] bg-black"></div>
           <h1 className=" px-3 text-3xl text-center w-fit font-libre_baskerville">
@@ -164,7 +180,7 @@ export default function Home() {
           Explore Rooms
         </button>
       </section>
-      <section className="sm:py-20 flex flex-col gap-16 sm:p-40">
+      <section className="sm:py-24 flex flex-col gap-16 sm:p-40">
         <div className="flex flex-row items-center mx-auto">
           <div className="w-32 h-[1px] bg-black"></div>
           <h1 className=" px-3 text-3xl text-center w-fit font-libre_baskerville">
@@ -173,7 +189,15 @@ export default function Home() {
           <div className="w-32 h-[1px] bg-black"></div>
         </div>
         <div className="flex flex-row">
-          <div className="w-[40rem] bg-gray-400 h-[30rem]"></div>
+          <div className="w-[40rem] bg-gray-400 h-[30rem]">
+            <Image
+              src="/assets/Meetings.jpg"
+              alt="Meetings image"
+              width={4626}
+              height={3468}
+              className=" object-cover object-center"
+            />
+          </div>
           <div className="flex flex-col gap-10 bg-[#221111]/80 justify-evenly w-[28rem] relative my-auto p-10 right-24 text-white">
             <h2 className="text-3xl text-center font-libre_baskerville">
               Meetings
@@ -184,13 +208,21 @@ export default function Home() {
               sapiente, corrupti illum blanditiis, aliquam provident culpa
               deleniti?
             </p>
-            <button className="hover:bg-white p-4 py-3 text-sm uppercase font-poppins border-white border-2 w-fit text-white">
+            <button className="hover:bg-white hover:text-[#221111] p-4 py-3 text-sm uppercase font-poppins border-white border-2 w-fit text-white">
               Learn More
             </button>
           </div>
         </div>
         <div className="flex flex-row-reverse">
-          <div className="w-[40rem] bg-gray-400 h-[30rem]"></div>
+          <div className="w-[40rem] h-[30rem]">
+            <Image
+              src="/assets/BG Meetings & Events.jpg"
+              alt="Events image"
+              width={4626}
+              height={3468}
+              className=" object-cover object-center"
+            />
+          </div>
           <div className="flex flex-col gap-10 bg-[linear-gradient(90deg,_rgba(58,49,38,0.85)_0%,_rgba(160,135,105,0.85)_100%)] justify-evenly w-[28rem] relative my-auto p-10 left-24 text-white">
             <h2 className="text-3xl text-center font-libre_baskerville">
               Events
@@ -201,7 +233,7 @@ export default function Home() {
               sapiente, corrupti illum blanditiis, aliquam provident culpa
               deleniti?
             </p>
-            <button className="p-4 py-3 text-sm uppercase font-poppins border-white border-2 w-fit text-white">
+            <button className="p-4 py-3 text-sm uppercase font-poppins border-white border-2 w-fit text-white hover:text-[#221111] hover:bg-white">
               Learn More
             </button>
           </div>
@@ -235,13 +267,68 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="sm:py-20 flex flex-col gap-16 sm:p-40">
+      <section className="sm:py-24 flex flex-col gap-16 sm:p-40">
         <div className="flex flex-row items-center mx-auto">
           <div className="w-32 h-[1px] bg-black"></div>
           <h1 className=" px-3 text-3xl text-center w-fit font-libre_baskerville">
             Gallery
           </h1>
           <div className="w-32 h-[1px] bg-black"></div>
+        </div>
+        <div className="grid grid-rows-2 gap-2">
+          <div className="grid grid-cols-4 gap-2">
+            <div className="bg-gray-300 col-span-1">
+              <Image
+                src={"/assets/Gallery Home 1.jpg"}
+                alt="Gallery Image"
+                width={2608}
+                height={4624}
+                className="h-full object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-2 grid-rows-2 gap-2 col-span-2">
+              <div className="bg-gray-300 col-span-1 h-full">
+                <Image
+                  src={"/assets/Events.jpg"}
+                  alt="Gallery Image"
+                  width={6000}
+                  height={4000}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="bg-gray-300 col-span-1 h-full">
+                <Image
+                  src={"/assets/Playground.jpg"}
+                  alt="Gallery Image"
+                  width={1616}
+                  height={1080}
+                  className="object-cover h-full w-full"
+                />
+              </div>
+              <div className="bg-gray-300 col-span-2 h-full row-span-1">
+                <Image
+                  src={"/assets/Gallery Home 4.png"}
+                  alt="Gallery Image"
+                  width={2008}
+                  height={964}
+                  className="object-cover aspect-video w-full"
+                />
+              </div>
+            </div>
+            <div className="bg-gray-300 col-span-1">
+              <Image
+                src={"/assets/Gallery Home 2.jpg"}
+                alt="Gallery Image"
+                width={4624}
+                height={3468}
+                className="object-cover h-full w-fit"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <div className=" bg-gray-300"></div>
+            <div className=" bg-gray-300"></div>
+          </div>
         </div>
       </section>
     </div>
