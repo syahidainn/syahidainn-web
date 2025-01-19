@@ -19,7 +19,16 @@ export default function RoomsPage() {
       textFacility2: "2 Guest",
       textFacility3: "40m² - 45m²",
       price: "IDR 400,000 /night", // Harga untuk Deluxe Double
-      facilities: ["Free WiFi", "Water Heater", "Room Service", "Free Mineral Water", "Dental Kit", "Coffee & Tea Maker", "Breakfast", "AC"], // Facilities for Deluxe Double
+      facilities: [
+        "Free WiFi",
+        "Water Heater",
+        "Room Service",
+        "Free Mineral Water",
+        "Dental Kit",
+        "Coffee & Tea Maker",
+        "Breakfast",
+        "AC",
+      ], // Facilities for Deluxe Double
       facilityLogos: [
         "/assets/icon/Wifi.svg",
         "/assets/icon/Water Heater.svg",
@@ -53,7 +62,16 @@ export default function RoomsPage() {
       textFacility2: "3 Guest",
       textFacility3: "40m² - 45m²",
       price: "IDR 400,000 /night", // Harga untuk Deluxe Triple
-      facilities: ["Free WiFi", "Water Heater", "Room Service", "Free Mineral Water", "Dental Kit", "Coffee", "Breakfast", "AC"], // Facilities for Deluxe Double
+      facilities: [
+        "Free WiFi",
+        "Water Heater",
+        "Room Service",
+        "Free Mineral Water",
+        "Dental Kit",
+        "Coffee",
+        "Breakfast",
+        "AC",
+      ], // Facilities for Deluxe Double
       facilityLogos: [
         "/assets/icon/Wifi.svg",
         "/assets/icon/Water Heater.svg",
@@ -84,7 +102,18 @@ export default function RoomsPage() {
       textFacility2: "2 Guest",
       textFacility3: "42m² - 45m²",
       price: "IDR 500,000 /night", // Harga untuk Superior Room
-      facilities: ["Free WiFi", "Water Heater", "Room Service", "Free Mineral Water", "Dental Kit", "Coffee", "Breakfast", "AC", "TV", "Kulkas Mini"], // Facilities for Deluxe Double
+      facilities: [
+        "Free WiFi",
+        "Water Heater",
+        "Room Service",
+        "Free Mineral Water",
+        "Dental Kit",
+        "Coffee",
+        "Breakfast",
+        "AC",
+        "TV",
+        "Kulkas Mini",
+      ], // Facilities for Deluxe Double
       facilityLogos: [
         "/assets/icon/Wifi.svg",
         "/assets/icon/Water Heater.svg",
@@ -117,7 +146,20 @@ export default function RoomsPage() {
       textFacility2: "2 Guest",
       textFacility3: "42m² - 45m²",
       price: "IDR 700,000 /night", // Harga untuk VIP Room
-      facilities: ["Free WiFi", "Water Heater", "Room Service", "Free Mineral Water", "Dental Kit", "Coffee", "Breakfast", "AC", "TV", "Kulkas Mini", "Family Room", "Bathtub"], // Facilities for Deluxe Double
+      facilities: [
+        "Free WiFi",
+        "Water Heater",
+        "Room Service",
+        "Free Mineral Water",
+        "Dental Kit",
+        "Coffee",
+        "Breakfast",
+        "AC",
+        "TV",
+        "Kulkas Mini",
+        "Family Room",
+        "Bathtub",
+      ], // Facilities for Deluxe Double
       facilityLogos: [
         "/assets/icon/Wifi.svg",
         "/assets/icon/Water Heater.svg",
@@ -150,6 +192,7 @@ export default function RoomsPage() {
         {/* Menampilkan RoomsItem saja */}
         {selectedRoom && (
           <RoomsItem
+            id={selectedRoom.id}
             tipe={selectedRoom.tipe}
             imageCard={selectedRoom.imageCard}
             desc={selectedRoom.desc}

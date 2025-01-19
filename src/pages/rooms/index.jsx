@@ -13,7 +13,7 @@ export default function Rooms() {
       logoFacility2: "/assets/icon/ukuran.svg",
       textFacility: "Twin Bed",
       textFacility1: "2 Guests",
-      textFacility2: "42㎡ – 45㎡"
+      textFacility2: "42㎡ – 45㎡",
     },
     {
       id: 2,
@@ -25,34 +25,34 @@ export default function Rooms() {
       logoFacility2: "/assets/icon/ukuran.svg",
       textFacility: "Three Bed",
       textFacility1: "3 Guests",
-      textFacility2: "42㎡ – 45㎡"
+      textFacility2: "42㎡ – 45㎡",
     },
 
     {
-      id:"3",
+      id: "3",
       imageCard: "/assets/Superior Double.png",
       tipe: "Superior Double",
-      desc:"Pilihan ideal bagi Anda yang menginginkan kenyamanan berkelas dengan harga yang bersaing. Superior Room dirancang dengan gaya modern...",
+      desc: "Pilihan ideal bagi Anda yang menginginkan kenyamanan berkelas dengan harga yang bersaing. Superior Room dirancang dengan gaya modern...",
       logoFacility: "/assets/icon/bed.svg",
       logoFacility1: "/assets/icon/guest.svg",
       logoFacility2: "/assets/icon/ukuran.svg",
       textFacility: "Twin Bed",
       textFacility1: "2 Guests",
-      textFacility2: "42㎡ – 45㎡"
+      textFacility2: "42㎡ – 45㎡",
     },
 
     {
-      id:"4",
+      id: "4",
       imageCard: "/assets/VIP Room.png",
       tipe: "VIP Room",
-      desc:"Menghadirkan kemewahan untuk memberikan pengalaman eksklusif bagi Anda yang menginginkan kenyamanan dan layanan terbaik. Dengan desain...",
+      desc: "Menghadirkan kemewahan untuk memberikan pengalaman eksklusif bagi Anda yang menginginkan kenyamanan dan layanan terbaik. Dengan desain...",
       logoFacility: "/assets/icon/bed.svg",
       logoFacility1: "/assets/icon/guest.svg",
       logoFacility2: "/assets/icon/ukuran.svg",
       textFacility: "King Bed",
       textFacility1: "2 Guests",
-      textFacility2: "42㎡ – 45㎡"
-    }
+      textFacility2: "42㎡ – 45㎡",
+    },
   ];
 
   return (
@@ -60,13 +60,17 @@ export default function Rooms() {
       <div className="bg-gray-300 h-48 md:h-72 w-full">Hero</div>
       <main className="p-4 md:p-8 pb-20 flex flex-col gap-8 md:gap-16 sm:p-8 md:pb-32">
         <div className="flex flex-col gap-6 md:gap-10">
-          <h1 className="text-3xl md:text-5xl text-center font-libre_baskerville">Our Rooms</h1>
-          <hr className="bg-black border-0 my-4 h-1 mx-auto w-24 md:w-48"/>
-          <p className="text-center text-base md:text-lg">Nikmati pengalaman menginap yang nyaman, elegan, dan mewah dalam setiap pilihan 
-            kamar kami dengan fasilitas yang dirancang untuk menciptakan suasana menyenangkan 
-            dan berkesan.</p>
-            {lists.map((list) => (
-              <RoomsCard 
+          <h1 className="text-3xl md:text-5xl text-center font-libre_baskerville">
+            Our Rooms
+          </h1>
+          <hr className="bg-black border-0 my-4 h-1 mx-auto w-24 md:w-48" />
+          <p className="text-center text-base md:text-lg">
+            Nikmati pengalaman menginap yang nyaman, elegan, dan mewah dalam
+            setiap pilihan kamar kami dengan fasilitas yang dirancang untuk
+            menciptakan suasana menyenangkan dan berkesan.
+          </p>
+          {lists.map((list) => (
+            <RoomsCard
               key={list.id}
               id={list.id}
               imageCard={list.imageCard}
