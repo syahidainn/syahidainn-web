@@ -2,67 +2,68 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React from "react";
 import Form from "next/form";
+import { rooms } from "@/lib/constants";
 
 export default function BookingPage() {
   const params = useParams();
   const slug = params?.slug;
 
-  const rooms = [
-    {
-      id: 1,
-      imageCard: "/assets/Deluxe Double.jpg",
-      tipe: "Deluxe Double",
-      desc: "Nikmati pengalaman menginap yang menenangkan di Deluxe Double Room, tempat di mana kesederhanaan bertemu dengan keanggunan...",
-      harga: " 400,000",
-      logoFacility: [
-        "/assets/icon/bed.svg",
-        "/assets/icon/guest.svg",
-        "/assets/icon/ukuran.svg",
-      ],
-      textFacility: ["Twin Bed", "2 Guests", "42㎡ – 45㎡"],
-    },
-    {
-      id: 2,
-      imageCard: "/assets/Deluxe Triple.jpg",
-      tipe: "Deluxe Triple",
-      desc: "Memberikan pengalaman menginap yang tak terlupakan dengan fasilitas unggulan dengan tiga tempat tidur yang nyaman dan...",
-      harga: " 500,000",
-      logoFacility: [
-        "/assets/icon/bed.svg",
-        "/assets/icon/guest.svg",
-        "/assets/icon/ukuran.svg",
-      ],
-      textFacility: ["Three Bed", "3 Guests", "42㎡ – 45㎡"],
-    },
+  // const rooms = [
+  //   {
+  //     id: 1,
+  //     imageCard: "/assets/Deluxe Double.jpg",
+  //     tipe: "Deluxe Double",
+  //     desc: "Nikmati pengalaman menginap yang menenangkan di Deluxe Double Room, tempat di mana kesederhanaan bertemu dengan keanggunan...",
+  //     harga: " 400,000",
+  //     logoFacility: [
+  //       "/assets/icon/bed.svg",
+  //       "/assets/icon/guest.svg",
+  //       "/assets/icon/ukuran.svg",
+  //     ],
+  //     textFacility: ["Twin Bed", "2 Guests", "42㎡ – 45㎡"],
+  //   },
+  //   {
+  //     id: 2,
+  //     imageCard: "/assets/Deluxe Triple.jpg",
+  //     tipe: "Deluxe Triple",
+  //     desc: "Memberikan pengalaman menginap yang tak terlupakan dengan fasilitas unggulan dengan tiga tempat tidur yang nyaman dan...",
+  //     harga: " 500,000",
+  //     logoFacility: [
+  //       "/assets/icon/bed.svg",
+  //       "/assets/icon/guest.svg",
+  //       "/assets/icon/ukuran.svg",
+  //     ],
+  //     textFacility: ["Three Bed", "3 Guests", "42㎡ – 45㎡"],
+  //   },
 
-    {
-      id: 3,
-      imageCard: "/assets/SUPERIOR Aset 1.jpg",
-      tipe: "Superior Double",
-      desc: "Pilihan ideal bagi Anda yang menginginkan kenyamanan berkelas dengan harga yang bersaing. Superior Room dirancang dengan gaya modern...",
-      harga: " 600,000",
-      logoFacility: [
-        "/assets/icon/bed.svg",
-        "/assets/icon/guest.svg",
-        "/assets/icon/ukuran.svg",
-      ],
-      textFacility: ["Twin Bed", "2 Guests", "42㎡ – 45㎡"],
-    },
+  //   {
+  //     id: 3,
+  //     imageCard: "/assets/SUPERIOR Aset 1.jpg",
+  //     tipe: "Superior Double",
+  //     desc: "Pilihan ideal bagi Anda yang menginginkan kenyamanan berkelas dengan harga yang bersaing. Superior Room dirancang dengan gaya modern...",
+  //     harga: " 600,000",
+  //     logoFacility: [
+  //       "/assets/icon/bed.svg",
+  //       "/assets/icon/guest.svg",
+  //       "/assets/icon/ukuran.svg",
+  //     ],
+  //     textFacility: ["Twin Bed", "2 Guests", "42㎡ – 45㎡"],
+  //   },
 
-    {
-      id: 4,
-      imageCard: "/assets/VIP Aset 1.jpg",
-      tipe: "VIP Room",
-      desc: "Menghadirkan kemewahan untuk memberikan pengalaman eksklusif bagi Anda yang menginginkan kenyamanan dan layanan terbaik. Dengan desain...",
-      harga: " 800,000",
-      logoFacility: [
-        "/assets/icon/bed.svg",
-        "/assets/icon/guest.svg",
-        "/assets/icon/ukuran.svg",
-      ],
-      textFacility: ["Twin Bed", "2 Guests", "42㎡ – 45㎡"],
-    },
-  ];
+  //   {
+  //     id: 4,
+  //     imageCard: "/assets/VIP Aset 1.jpg",
+  //     tipe: "VIP Room",
+  //     desc: "Menghadirkan kemewahan untuk memberikan pengalaman eksklusif bagi Anda yang menginginkan kenyamanan dan layanan terbaik. Dengan desain...",
+  //     harga: " 800,000",
+  //     logoFacility: [
+  //       "/assets/icon/bed.svg",
+  //       "/assets/icon/guest.svg",
+  //       "/assets/icon/ukuran.svg",
+  //     ],
+  //     textFacility: ["Twin Bed", "2 Guests", "42㎡ – 45㎡"],
+  //   },
+  // ];
   return (
     <section className="min-h-screen sm:py-24 flex flex-col sm:p-40">
       <div className="flex flex-col m-auto px-24 items-center  py-7 mt-9 bg-[#F9F9F9] gap-10">

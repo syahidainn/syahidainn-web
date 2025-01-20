@@ -8,13 +8,9 @@ export default function RoomsItem({
   tipe,
   katakata,
   desc,
-  logoFacility1,
-  logoFacility2,
-  logoFacility3,
-  textFacility1,
-  textFacility2,
-  textFacility3,
-  price,
+  logoFacility,
+  textFacility,
+  harga,
   facilities, // Menambahkan prop facilities
   facilityLogos, // Menambahkan prop facilityLogos
   galleryImages, // Menambahkan prop galleryImages
@@ -67,7 +63,7 @@ export default function RoomsItem({
           <div className="w-full sm:w-1/2 h-[15rem] sm:h-[30rem] relative">
             <div className="absolute -left-4 -top-4 w-full h-full z-0 hidden sm:block">
               <Image
-                src={`/assets/${imageCard}`}
+                src={imageCard}
                 layout="responsive"
                 width={500}
                 height={500}
@@ -76,7 +72,7 @@ export default function RoomsItem({
             </div>
             <div className="relative z-10">
               <Image
-                src={`/assets/${imageCard}`}
+                src={imageCard}
                 layout="responsive"
                 width={500}
                 height={500}
@@ -96,7 +92,20 @@ export default function RoomsItem({
                 {desc}
               </p>
               <div className="flex flex-row flex-wrap gap-3 items-center mt-5">
-                <div className="flex items-center gap-2">
+                {logoFacility.map((item, index) => (
+                  <div className="flex items-center gap-2" key={index}>
+                    <Image
+                      src={item}
+                      width={30}
+                      height={30}
+                      className="w-6 sm:w-8 lg:w-10"
+                    />
+                    <p className="text-xs sm:text-base py-2 px-1 font-inter">
+                      {textFacility[index]}
+                    </p>
+                  </div>
+                ))}
+                {/* <div className="flex items-center gap-2">
                   <Image
                     src={logoFacility1}
                     width={30}
@@ -128,14 +137,14 @@ export default function RoomsItem({
                   <p className="text-xs sm:text-base py-2 px-1">
                     {textFacility3}
                   </p>
-                </div>
+                </div> */}
               </div>
               <h2 className="text-xl sm:text-2xl font-poppins text-center sm:text-left mt-5">
                 <span className="font-bold">
-                  {price.split(" ")[0]} {price.split(" ")[1]}
+                  {harga.split(" ")[0]} {harga.split(" ")[1]}
                 </span>{" "}
                 <span className="font-light">
-                  {price.split(" ").slice(2).join(" ")}
+                  {harga.split(" ").slice(2).join(" ")}
                 </span>
               </h2>
               <div className="flex justify-center sm:justify-start">
@@ -254,13 +263,13 @@ export default function RoomsItem({
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="2.5"
+                  strokeWidth="2.5"
                   stroke="currentColor"
-                  class="size-10"
+                  className="size-10"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M15.75 19.5 8.25 12l7.5-7.5"
                   />
                 </svg>
@@ -270,13 +279,13 @@ export default function RoomsItem({
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="2.5"
+                  strokeWidth="2.5"
                   stroke="currentColor"
-                  class="size-10"
+                  className="size-10"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="m8.25 4.5 7.5 7.5-7.5 7.5"
                   />
                 </svg>

@@ -9,11 +9,7 @@ export default function RoomsCard({
   tipe,
   desc,
   logoFacility,
-  logoFacility1,
-  logoFacility2,
   textFacility,
-  textFacility1,
-  textFacility2,
 }) {
   const router = useRouter();
 
@@ -31,33 +27,17 @@ export default function RoomsCard({
         <h1 className="text-2xl md:text-4xl">{tipe}</h1>
         <p className="max-w-full md:max-w-lg text-base md:text-lg">{desc}</p>
         <div className="flex flex-wrap gap-4">
-          <div className="flex items-center gap-2">
-            <Image
-              src={logoFacility}
-              width={50}
-              height={50}
-              className="w-8 h-8 md:w-10 md:h-10"
-            />
-            <p className="text-sm md:text-base">{textFacility}</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image
-              src={logoFacility1}
-              width={40}
-              height={40}
-              className="w-8 h-8 md:w-10 md:h-10"
-            />
-            <p className="text-sm md:text-base">{textFacility1}</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image
-              src={logoFacility2}
-              width={30}
-              height={30}
-              className="w-8 h-8 md:w-10 md:h-10"
-            />
-            <p className="text-sm md:text-base">{textFacility2}</p>
-          </div>
+          {logoFacility.map((item, index) => (
+            <div className="flex items-center gap-2" key={index}>
+              <Image
+                src={item}
+                width={50}
+                height={50}
+                className="w-8 h-8 md:w-10 md:h-10"
+              />
+              <p className="text-sm md:text-base">{textFacility[index]}</p>
+            </div>
+          ))}
         </div>
         <div className="flex flex-col md:flex-row gap-4">
           <button className="p-2 md:p-4 font-semibold border-[#AE9578] border-2 text-white bg-[#AE9578]">

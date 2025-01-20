@@ -1,60 +1,8 @@
 import Review from "@/components/Review";
 import RoomsCard from "@/components/RoomsCard";
+import { rooms } from "@/lib/constants";
 
 export default function Rooms() {
-  const lists = [
-    {
-      id: 1,
-      imageCard: "/assets/Deluxe Double.png",
-      tipe: "Deluxe Double",
-      desc: "Nikmati pengalaman menginap yang menenangkan di Deluxe Double Room, tempat di mana kesederhanaan bertemu dengan keanggunan...",
-      logoFacility: "/assets/icon/bed.svg",
-      logoFacility1: "/assets/icon/guest.svg",
-      logoFacility2: "/assets/icon/ukuran.svg",
-      textFacility: "Twin Bed",
-      textFacility1: "2 Guests",
-      textFacility2: "42㎡ – 45㎡",
-    },
-    {
-      id: 2,
-      imageCard: "/assets/Deluxe Triple.png",
-      tipe: "Deluxe Triple",
-      desc: "Memberikan pengalaman menginap yang tak terlupakan dengan fasilitas unggulan dengan tiga tempat tidur yang nyaman dan...",
-      logoFacility: "/assets/icon/bed.svg",
-      logoFacility1: "/assets/icon/guest.svg",
-      logoFacility2: "/assets/icon/ukuran.svg",
-      textFacility: "Three Bed",
-      textFacility1: "3 Guests",
-      textFacility2: "42㎡ – 45㎡",
-    },
-
-    {
-      id: "3",
-      imageCard: "/assets/Superior Double.png",
-      tipe: "Superior Double",
-      desc: "Pilihan ideal bagi Anda yang menginginkan kenyamanan berkelas dengan harga yang bersaing. Superior Room dirancang dengan gaya modern...",
-      logoFacility: "/assets/icon/bed.svg",
-      logoFacility1: "/assets/icon/guest.svg",
-      logoFacility2: "/assets/icon/ukuran.svg",
-      textFacility: "Twin Bed",
-      textFacility1: "2 Guests",
-      textFacility2: "42㎡ – 45㎡",
-    },
-
-    {
-      id: "4",
-      imageCard: "/assets/VIP Room.png",
-      tipe: "VIP Room",
-      desc: "Menghadirkan kemewahan untuk memberikan pengalaman eksklusif bagi Anda yang menginginkan kenyamanan dan layanan terbaik. Dengan desain...",
-      logoFacility: "/assets/icon/bed.svg",
-      logoFacility1: "/assets/icon/guest.svg",
-      logoFacility2: "/assets/icon/ukuran.svg",
-      textFacility: "King Bed",
-      textFacility1: "2 Guests",
-      textFacility2: "42㎡ – 45㎡",
-    },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen font-poppins bg-[#F9F9F9] text-black">
       <div className="bg-gray-300 h-48 md:h-72 w-full">Hero</div>
@@ -69,19 +17,15 @@ export default function Rooms() {
             setiap pilihan kamar kami dengan fasilitas yang dirancang untuk
             menciptakan suasana menyenangkan dan berkesan.
           </p>
-          {lists.map((list) => (
+          {rooms.map((room) => (
             <RoomsCard
-              key={list.id}
-              id={list.id}
-              imageCard={list.imageCard}
-              tipe={list.tipe}
-              desc={list.desc}
-              logoFacility={list.logoFacility}
-              logoFacility1={list.logoFacility1}
-              logoFacility2={list.logoFacility2}
-              textFacility={list.textFacility}
-              textFacility1={list.textFacility1}
-              textFacility2={list.textFacility2}
+              key={room.id}
+              id={room.id}
+              imageCard={room.imageCard}
+              tipe={room.tipe}
+              desc={room.desc}
+              logoFacility={room.logoFacility}
+              textFacility={room.textFacility}
             />
           ))}
         </div>
