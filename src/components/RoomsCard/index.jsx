@@ -24,8 +24,8 @@ export default function RoomsCard({
         />
       </div>
       <div className="space-y-6 md:space-y-12">
-        <h1 className="text-2xl md:text-4xl">{tipe}</h1>
-        <p className="max-w-full md:max-w-lg text-base md:text-lg">{desc}</p>
+        <h1 className="text-2xl md:text-4xl font-libre_baskerville">{tipe}</h1>
+        <p className="max-w-full md:max-w-lg text-base md:text-lg font-poppins">{desc}</p>
         <div className="flex flex-wrap gap-4">
           {logoFacility.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
@@ -41,7 +41,7 @@ export default function RoomsCard({
         </div>
         <div className="flex flex-col md:flex-row gap-4">
           <button className="p-2 md:p-4 font-semibold border-[#AE9578] border-2 text-white bg-[#AE9578]">
-            click
+            Book Now
           </button>
           <button
             className="p-2 md:p-4 font-bold border-black border-2 text-black"

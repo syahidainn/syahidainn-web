@@ -1,11 +1,25 @@
 import Image from "next/image";
 
-export default function EventsCard({ classname, imageCard, eventType, desc, price, facilities, backgroundColor }) {
+export default function EventsCard({ classname, imageCard, eventType, desc, price, facilities, specialStyle, specialStyle2, backgroundColor }) {
   return (
+
+    //tampilan rectangle color pada id:1
     <div className={`relative flex flex-col pt-10 w-full md:flex-row gap-6 md:gap-12 ${classname} ${backgroundColor}`}>
-      <div className="relative pl-5 w-full md:w-1/2 h-[20rem] md:h-[30rem]">
+      {specialStyle && (
+        <div className="absolute top-4 left-0 w-[300px] h-[300px] md:w-[492px] md:h-[420px] bg-[#AE9578] -z-10"></div>
+      )}
+
+      {/*tampilan rectangle color pada id:2*/}
+      {specialStyle2 && (
+        <div className="absolute top-4 right-2 w-[300px] h-[300px] md:w-[492px] md:h-[420px] bg-[#695441] -z-10"></div>
+      )}
+
+      {/*tampilan gambar*/}
+      <div className="relative pl-5 w-full md:w-1/2 h-[15rem] md:h-[30rem]">
         <Image src={imageCard} width={600} height={500} className="w-full h-full object-cover" />
       </div>
+
+      {/*tampilan deskripsi*/}
       <div className="space-y-3 my-4 md:space-y-9">
         <h1 className="text-2xl md:text-4xl font-libre_baskerville mb-3">{eventType}</h1>
         <p className="max-w-full md:max-w-lg text-base md:text-lg font-poppins">{desc}</p>
@@ -17,7 +31,7 @@ export default function EventsCard({ classname, imageCard, eventType, desc, pric
             <li key={index} className="text-sm md:text-base">{facility.name}</li>
           ))}
         </ul>
-        <button className="p-2 md:p-3 font-semibold border-[#AE9578] border-2 text-[#AE9578] bg-transparent">Book Now</button>
+        <button className="p-2 md:p-3 font-semibold border-[#AE9578] border-2 text-[#AE9578] bg-transparent font-poppins">Book Now</button>
       </div>
     </div>
   );
