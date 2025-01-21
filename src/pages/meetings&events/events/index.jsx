@@ -8,7 +8,7 @@ export default function Events() {
   const events = [
     {
       id: 1,
-      imageCard: "/assets/.jpg",
+      imageCard: "/assets/Auditorium.jpg",
       eventType: "Lobby",
       desc: "Lobby kami adalah ruang yang elegan dan nyaman, sempurna untuk acara kecil seperti pertemuan, networking atau acara lainnya. Dengan fasilitas yang lengkap, kami siap mendukung setiap kebutuhan acara Anda..",
       price: "7.000.000",

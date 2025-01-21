@@ -1,7 +1,7 @@
 export const rooms = [
   {
     id: 1,
-    imageCard: "/assets/Double.jpg",
+    imageCard: "/assets/Deluxe Double.jpg",
     tipe: "Deluxe Double",
     desc: "Nikmati pengalaman menginap yang menenangkan di Deluxe Double Room, tempat di mana kesederhanaan bertemu dengan keanggunan...",
     harga: " 400,000",

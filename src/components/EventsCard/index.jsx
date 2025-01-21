@@ -31,7 +31,7 @@ export default function EventsCard({ classname, imageCard, eventType, desc, pric
             <li key={index} className="text-sm md:text-base">{facility.name}</li>
           ))}
         </ul>
-        <button className="p-2 md:p-3 font-semibold border-[#AE9578] border-2 text-[#AE9578] bg-transparent">Book Now</button>
+        <button className="p-2 md:p-3 font-semibold border-[#AE9578] border-2 text-[#AE9578] bg-transparent font-poppins">Book Now</button>
       </div>
     </div>
   );

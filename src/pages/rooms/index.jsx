@@ -9,7 +9,7 @@ export default function Rooms() {
     <div className="flex flex-col min-h-screen font-poppins bg-[#F9F9F9] text-black">
       <div className="bg-gray-300 h-48 md:h-72 w-full">Hero</div>
       <main className="p-4 md:p-8 pb-20 flex flex-col gap-8 md:gap-16 sm:p-8 md:pb-32">
-        <div className="flex flex-col   gap-6 md:gap-10">
+        <div className="flex flex-col gap-6 md:gap-10">
 
           {/*menampilkan deskripsi*/}
          <h1 className="text-3xl mb-10 mt-12 md:text-5xl text-center font-libre_baskerville bg-[#F8F4EE] pt-10">

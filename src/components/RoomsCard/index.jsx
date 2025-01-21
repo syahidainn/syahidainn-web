@@ -14,7 +14,7 @@ export default function RoomsCard({
   const router = useRouter();
 
   return (
-    <div className={`flex flex-col md:flex-row gap- md:gap-24 ${classname}`}>
+    <div className={`flex flex-col md:flex-row gap-8 md:gap-24 ${classname}`}>
       <div className="w-full md:w-1/2 h-[20rem] md:h-[30rem]">
         <Image
           src={imageCard}
