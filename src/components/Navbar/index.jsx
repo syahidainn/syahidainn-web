@@ -21,7 +21,7 @@ export default function Navbar() {
           hotel in ciputat
         </p>
       </div>
-      <div className="flex flex-row xl:gap-8 gap-5 justify-between text-center mx-auto">
+      <div className="flex flex-row xl:gap-8 gap-5 justify-between font-normal text-center mx-auto">
         <Link
           href={"/"}
           className={`hidden lg:block hover:border-b-[1px] hover:border-black  py-2 ${
