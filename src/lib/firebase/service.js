@@ -20,12 +20,26 @@ export async function retrieveData(collectionName) {
   return data;
 }
 
-export async function retrieveDataById(collectionName, id) {
+export async function retrieveDataById() {
   const snapshot = await getDoc(doc(firestore, collectionName, id));
   const data = snapshot.data();
+  // const docSnap = await getDoc(docRef);
+  // const bookingData = {
+  //   id: docSnap.id, // Save the document ID
+  //   ...docSnap.data(),
+  // };
   return data;
 }
 
 export async function submitForm(collectionName, data) {
   await addDoc(collection(firestore, collectionName), data);
+}
+
+export async function updateData(collectionName, data) {
+  const docRef = doc(firestore, collectionName, data);
+  // const bookingData = {
+  //   id: docSnap.id, // Save the document ID
+  //   ...docSnap.data(),
+  // };
+  await updateDoc(docRef, data);
 }

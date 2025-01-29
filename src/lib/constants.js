@@ -4,7 +4,7 @@ export const rooms = [
     imageCard: "/assets/Deluxe Double.jpg",
     tipe: "Deluxe Double",
     desc: "Nikmati pengalaman menginap yang menenangkan di Deluxe Double Room, tempat di mana kesederhanaan bertemu dengan keanggunan...",
-    harga: " 400,000",
+    harga: 400000,
     logoFacility: [
       "/assets/icon/bed.svg",
       "/assets/icon/guest.svg",
@@ -46,7 +46,7 @@ export const rooms = [
     imageCard: "/assets/Deluxe Triple.jpg",
     tipe: "Deluxe Triple",
     desc: "Memberikan pengalaman menginap yang tak terlupakan dengan fasilitas unggulan dengan tiga tempat tidur yang nyaman dan...",
-    harga: " 500,000",
+    harga: 500000,
     logoFacility: [
       "/assets/icon/bed.svg",
       "/assets/icon/guest.svg",
@@ -86,7 +86,7 @@ export const rooms = [
     imageCard: "/assets/SUPERIOR Aset 1.jpg",
     tipe: "Superior Double",
     desc: "Pilihan ideal bagi Anda yang menginginkan kenyamanan berkelas dengan harga yang bersaing. Superior Room dirancang dengan gaya modern...",
-    harga: " 600,000",
+    harga: 600000,
     logoFacility: [
       "/assets/icon/bed.svg",
       "/assets/icon/guest.svg",
@@ -130,7 +130,7 @@ export const rooms = [
     imageCard: "/assets/VIP Aset 1.jpg",
     tipe: "VIP Room",
     desc: "Menghadirkan kemewahan untuk memberikan pengalaman eksklusif bagi Anda yang menginginkan kenyamanan dan layanan terbaik. Dengan desain...",
-    harga: " 800,000",
+    harga: 800000,
     logoFacility: [
       "/assets/icon/bed.svg",
       "/assets/icon/guest.svg",
@@ -173,3 +173,7 @@ export const rooms = [
     ], // Gallery images for VIP Room
   },
 ];
+
+export function formatNumber(number) {
+  return Intl.NumberFormat("id-Id").format(number);
+}
