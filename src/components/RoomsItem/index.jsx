@@ -1,3 +1,4 @@
+import { formatNumber } from "@/lib/constants";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -141,10 +142,13 @@ export default function RoomsItem({
               </div>
               <h2 className="text-xl sm:text-2xl font-poppins text-center sm:text-left mt-5">
                 <span className="font-bold">
-                  {harga.split(" ")[0]} {harga.split(" ")[1]}
+                  {formatNumber(harga)}
+                  {/* {harga.split(" ")[0]} {harga.split(" ")[1]} */}
                 </span>{" "}
                 <span className="font-light">
-                  {harga.split(" ").slice(2).join(" ")}
+                  {formatNumber(harga)}
+
+                  {/* {harga.split(" ").slice(2).join(" ")} */}
                 </span>
               </h2>
               <div className="flex justify-center sm:justify-start">
