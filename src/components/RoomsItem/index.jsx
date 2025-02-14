@@ -142,11 +142,11 @@ export default function RoomsItem({
               </div>
               <h2 className="text-xl sm:text-2xl font-poppins text-center sm:text-left mt-5">
                 <span className="font-bold">
-                  {formatNumber(harga)}
+                  IDR {formatNumber(harga)}
                   {/* {harga.split(" ")[0]} {harga.split(" ")[1]} */}
                 </span>{" "}
                 <span className="font-light">
-                  {formatNumber(harga)}
+                  / Night
 
                   {/* {harga.split(" ").slice(2).join(" ")} */}
                 </span>
