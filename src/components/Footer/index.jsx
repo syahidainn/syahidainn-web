@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1F1C18] text-white py-8 px-6 md:px-12 font-poppins">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+    <footer className= "bg-[#1F1C18] text-white py-8 font-poppins">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-6 md:px-12">
         <div className="flex flex-col space-y-2 justify-center">
           <h2 className="text-xl font-semibold font-libre_baskerville">Syahida Inn</h2>
           <p className="text-sm">Hotel In Ciputat</p>
@@ -43,7 +43,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between text-xs text-gray-400">
+      <div className="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between text-xs text-gray-400 px-6 md:px-12">
         <p>Copyright © 2024. SyahidaInn. All rights reserved.</p>
         <div className="flex space-x-4">
           <p>Terms & Conditions</p>
