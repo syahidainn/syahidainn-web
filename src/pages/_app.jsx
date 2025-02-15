@@ -48,7 +48,7 @@ export default function App({ Component, pageProps }) {
           <Navbar />
         </header>
         <Component {...pageProps} />
-        <footer className="mb-[68px] bg-gray-400 px-6 md:mb-0 md:px-8 h-20">
+        <footer>
           <Footer />
         </footer>
       </div>
