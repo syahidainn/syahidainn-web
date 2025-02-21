@@ -65,7 +65,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between text-xs text-gray-400">
+      <div className="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between text-xs text-gray-400 px-6 md:px-12">
         <p>Copyright © 2024. SyahidaInn. All rights reserved.</p>
         <div className="flex space-x-4">
           <p>Terms & Conditions</p>
