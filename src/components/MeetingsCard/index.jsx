@@ -31,7 +31,7 @@ export default function MeetingsCard({ classname, title, imgSrc }) {
                 8 Hours of Use
               </p>
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/guest.svg" alt="icon" className="inline-block mr-2 w-8" />
+                <img src="/assets/icon/max person.svg" alt="icon" className="inline-block mr-2 w-8" />
                 Max 50 Person
               </p>
             </div>
@@ -42,7 +42,7 @@ export default function MeetingsCard({ classname, title, imgSrc }) {
                 8 Hours of Use
               </p>
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/guest.svg" alt="icon" className="inline-block mr-2 w-8" />
+                <img src="/assets/icon/max person.svg" alt="icon" className="inline-block mr-2 w-8" />
                 Max 50 Person
               </p>
             </div>
@@ -53,7 +53,7 @@ export default function MeetingsCard({ classname, title, imgSrc }) {
                 8 Hours of Use
               </p>
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/guest.svg" alt="icon" className="inline-block mr-2 w-8" />
+                <img src="/assets/icon/max person.svg" alt="icon" className="inline-block mr-2 w-8" />
                 Max 50 Person
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function MeetingsCard({ classname, title, imgSrc }) {
                 8 Hours of Use
               </p>
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/guest.svg" alt="icon" className="inline-block mr-2 w-8" />
+                <img src="/assets/icon/max person.svg" alt="icon" className="inline-block mr-2 w-8" />
                 Max 50 Person
               </p>          
               </div>
@@ -73,13 +73,13 @@ export default function MeetingsCard({ classname, title, imgSrc }) {
         <div className="mt-10">
           <h2 className="font-semibold text-lg font-poppins mb-2 mt-10">Facilities</h2>
           <div className="flex flex-row gap-4 text-1xl font-poppins mt-5">
-            <ul className="list-disc list-inside space-y-2">
-              <li className="font-poppins">AC</li>
-              <li className="font-poppins">Proyektor</li>
+            <ul className="list-disc list-inside space-y-2 mr-10">
+              <li className="marker:text-2xl font-poppins">AC</li>
+              <li className="marker:text-2xl font-poppins">WiFi</li>
             </ul>
             <ul className="list-disc list-inside space-y-2">
-              <li className="font-poppins">WiFi</li>
-              <li className="font-poppins">Sound System</li>
+              <li className="marker:text-2xl font-poppins">Proyektor</li>
+              <li className="marker:text-2xl font-poppins">Sound System</li>
             </ul>
           </div>
         </div>
