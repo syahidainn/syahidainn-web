@@ -15,7 +15,7 @@ export default function RoomsCard({
 
   return (
     <div className={`flex flex-col md:flex-row gap-8 md:gap-24 ${classname}`}>
-      <div className="w-full md:w-1/2 h-[20rem] md:h-[30rem]">
+      <div className="w-[600px] object-cover aspect-[9/6]">
         <Image
           src={imageCard}
           width={600}
@@ -24,8 +24,8 @@ export default function RoomsCard({
         />
       </div>
       <div className="space-y-6 md:space-y-12">
-        <h1 className="text-2xl md:text-4xl font-libre_baskerville">{tipe}</h1>
-        <p className="max-w-full md:max-w-lg text-base md:text-lg font-poppins">{desc}</p>
+        <h1 className="text-2xl font-libre_baskerville">{tipe}</h1>
+        <p className="max-w-full md:max-w-lg text-base font-poppins">{desc}</p>
         <div className="flex flex-wrap gap-4">
           {logoFacility.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
@@ -39,12 +39,12 @@ export default function RoomsCard({
             </div>
           ))}
         </div>
-        <div className="flex flex-col md:flex-row gap-4">
-          <button className="p-2 md:p-4 font-semibold border-[#AE9578] border-2 text-white bg-[#AE9578]">
+        <div className="inline-flex gap-6 items-center">
+          <button className="hover:bg-white hover:text-[#AE9578] mx-auto text-sm p-4 py-3 font-poppins font-semibold border-[#AE9578] border-2 text-white bg-[#AE9578]">
             Book Now
           </button>
           <button
-            className="p-2 md:p-4 font-bold border-black border-2 text-black"
+            className="mx-auto text-sm py-1 hover:text-[#AE9578] hover:border-[#AE9578] font-poppins font-semibold h-fit border-black border-b-2 text-black"
             onClick={() => router.push(`/rooms/${id}`)}
           >
             Explore Rooms

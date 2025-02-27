@@ -4,16 +4,14 @@ import Image from "next/image";
 
 export default function MeetingEvents() {
   return (
-    <div
-      className="flex flex-col min-h-screen"
-    >
+    <div className="flex flex-col min-h-screen">
       <Hero
         name="Meetings & Events"
         desc="The Perfect Venue for Every Occasion"
         img="/assets/hero_meetingevent2.jpg"
       />
 
-       {/*ballroom section*/}
+      {/*ballroom section*/}
       <section>
         <Container>
           <div className="flex flex-col items-center">
@@ -24,8 +22,8 @@ export default function MeetingEvents() {
               <hr className="w-1/2 mx-auto border-black my-2" />
             </div>
             <p className="sm font-poppins text-center max-w-xl mt-4">
-              Ballroom kami dirancang dengan sentuhan elegan dan modern, 
-              menyediakan ruang yang luas dan nyaman untuk menyelenggarakan 
+              Ballroom kami dirancang dengan sentuhan elegan dan modern,
+              menyediakan ruang yang luas dan nyaman untuk menyelenggarakan
               berbagai acara yang berkesan.
             </p>
 
@@ -90,8 +88,8 @@ export default function MeetingEvents() {
               <hr className="w-1/2 mx-auto border-black my-2" />
             </div>
             <p className="sm font-poppins text-center max-w-xl mt-4">
-              Ruang meeting kami dirancang untuk menciptakan lingkungan 
-              yang sempurna bagi pertemuan bisnis. Dilengkapi dengan berbagai 
+              Ruang meeting kami dirancang untuk menciptakan lingkungan yang
+              sempurna bagi pertemuan bisnis. Dilengkapi dengan berbagai
               fasilitas, ruang ini siap mendukung setiap kegiatan anda.
             </p>
 
@@ -157,10 +155,10 @@ export default function MeetingEvents() {
                   Weddings
                 </h2>
                 <p className="text-sm font-poppins text-wrap max-w-md">
-                  Rayakan moment sakral Anda di Syahida Inn, 
-                  tempat di mana pernikahan impian Anda menjadi kenyataan. 
-                  Dengan layanan terbaik, kami siap membantu merancang hari 
-                  istimewa Anda untuk menciptakan pengalaman yang tak terlupakan. 
+                  Rayakan moment sakral Anda di Syahida Inn, tempat di mana
+                  pernikahan impian Anda menjadi kenyataan. Dengan layanan
+                  terbaik, kami siap membantu merancang hari istimewa Anda untuk
+                  menciptakan pengalaman yang tak terlupakan. 
                 </p>
               </div>
             </div>
@@ -179,11 +177,10 @@ export default function MeetingEvents() {
                   Meetings
                 </h2>
                 <p className="text-sm font-poppins text-wrap max-w-md">
-                 Untuk acara bisnis, seminar, dan koferesnsi, 
-                 Syahida Inn adalah tempat yang tepat untuk 
-                 menyelenggarakan kegiatan Anda. Dilengkapi dengan 
-                 fasilitas dan layanan terbaik, kami siap mendukung 
-                 setiap kebutuhan acara Anda.
+                  Untuk acara bisnis, seminar, dan koferesnsi, Syahida Inn
+                  adalah tempat yang tepat untuk menyelenggarakan kegiatan Anda.
+                  Dilengkapi dengan fasilitas dan layanan terbaik, kami siap
+                  mendukung setiap kebutuhan acara Anda.
                 </p>
               </div>
             </div>
@@ -203,10 +200,10 @@ export default function MeetingEvents() {
                   Events
                 </h2>
                 <p className="text-sm font-poppins text-wrap max-w-md">
-                   Rayakan momen istimewa Anda di hotel kami, di mana 
-                   setiap acara menjadi pengalaman tak terlupakan. 
-                   Dengan ruang acara yang elegan dan luas. Mengakomodasi 
-                   berbagai perayaan, dari pernikahan hingga acara perusahaan.
+                  Rayakan momen istimewa Anda di hotel kami, di mana setiap
+                  acara menjadi pengalaman tak terlupakan. Dengan ruang acara
+                  yang elegan dan luas. Mengakomodasi berbagai perayaan, dari
+                  pernikahan hingga acara perusahaan.
                 </p>
               </div>
             </div>
