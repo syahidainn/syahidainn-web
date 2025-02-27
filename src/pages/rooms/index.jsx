@@ -1,28 +1,33 @@
+import Container from "@/components/Container";
+import Hero from "@/components/Hero";
 import Review from "@/components/Review";
 import RoomsCard from "@/components/RoomsCard";
 import { rooms } from "@/lib/constants";
+import Image from "next/image";
 
 export default function Rooms() {
   return (
-
     //tampilan halaman rooms
     <div className="flex flex-col min-h-screen font-poppins bg-[#F9F9F9] text-black">
-      <div className="bg-gray-300 h-48 md:h-72 w-full">Hero</div>
-      <main className="p-4 md:p-8 pb-20 flex flex-col gap-8 md:gap-16 sm:p-8 md:pb-32">
-        <div className="flex flex-col gap-6 md:gap-10">
+      <Hero name="Our Rooms" img="/assets/Superior Double 2.jpg" />
+      {/* <div className="p-4 md:p-8 pb-20 flex flex-col gap-8 md:gap-16 sm:p-8 md:pb-32"> */}
 
-          {/*menampilkan deskripsi*/}
-         <h1 className="text-3xl mb-10 mt-12 md:text-5xl text-center font-libre_baskerville bg-[#F8F4EE] pt-10">
-          Our Rooms
-            <hr className="bg-[#1E1E1E] my-4 h-0.5 mx-auto w-24 md:w-48"/>
-          </h1>
-          <p className="text-center p-5 mb-24 text-base md:text-lg font-poppins px-4 md:px-60 lg:px-80 xl:px-96">
-            Nikmati pengalaman menginap yang nyaman, elegan, dan mewah dalam
-            setiap pilihan kamar kami dengan fasilitas yang dirancang untuk
-            menciptakan suasana menyenangkan dan berkesan.
-          </p>
-
-          {/*menampilkan data*/}
+      {/*menampilkan deskripsi*/}
+      <section>
+        <Container className="space-y-4">
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col w-fit">
+              <h1 className="text-3xl text-center font-libre_baskerville">
+                Our Rooms
+              </h1>
+              <hr className="w-1/2 mx-auto border-black my-2" />
+            </div>
+            {/* <p className="sm font-poppins text-center max-w-xl mt-4">
+              Nikmati pengalaman menginap yang nyaman, elegan, dan mewah dalam
+              setiap pilihan kamar kami dengan fasilitas yang dirancang untuk
+              menciptakan suasana menyenangkan dan berkesan.
+            </p> */}
+          </div>
           {rooms.map((room) => (
             <RoomsCard
               key={room.id}
@@ -34,14 +39,12 @@ export default function Rooms() {
               textFacility={room.textFacility}
             />
           ))}
-          
-        </div>
+        </Container>
+      </section>
 
-        {/*menampilkan review*/}
-        <div>
-          <Review />
-        </div>
-      </main>
+      {/*menampilkan review*/}
+      <Review />
     </div>
+    // </div>
   );
 }
