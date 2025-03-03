@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
-import Form from "next/form";
 import { formatNumber, rooms } from "@/lib/constants";
 import { useRouter } from "next/router";
 import { submitForm } from "@/lib/firebase/service";
@@ -14,19 +13,22 @@ import {
 } from "@/components/ui/accordion";
 import { CldUploadButton } from "next-cloudinary";
 import { sendBookingForm } from "@/lib/api";
+import { useFormStatus } from "react-dom";
 
 export default function BookingPage() {
   const params = useParams();
   const router = useRouter();
   const slug = params?.slug;
 
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [KTP, setKTP] = useState("");
   const [phone, setPhone] = useState("");
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
-  const [hostedUrl, setHostedUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [fileName, setFileName] = useState("");
   const [submit, setSubmit] = useState(false);
   const [jumlah, setJumlah] = useState(1);
@@ -48,22 +50,37 @@ export default function BookingPage() {
       setPhone("");
       setCheckIn("");
       setCheckOut("");
-      setHostedUrl("");
+      setImageUrl("");
     }
     setSubmit(!submit);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const newErrors = {};
+    if (!name) newErrors.name = "Name is required";
+    if (!email) newErrors.email = "Email is required";
+    if (!KTP) newErrors.KTP = "Identity Number (KTP) is required";
+    if (!phone) newErrors.phone = "Phone Number is required";
+    if (!checkIn) newErrors.checkIn = "Check-in Date is required";
+    if (!checkOut) newErrors.checkOut = "Check-out Date is required";
+    if (!imageUrl) newErrors.imageUrl = "Proof of Payment is required";
+
+    // Jika ada error, set state dan hentikan submit
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
     try {
-      submitForm("booking", {
+      await submitForm("booking", {
         name,
         email,
         KTP,
         phone,
         checkIn,
         checkOut,
-        hostedUrl,
+        imageUrl,
       });
       await sendBookingForm({
         name,
@@ -72,7 +89,7 @@ export default function BookingPage() {
         phone,
         checkIn,
         checkOut,
-        hostedUrl,
+        imageUrl,
       });
       alert("Form submitted successfully!");
     } catch (error) {
@@ -81,7 +98,7 @@ export default function BookingPage() {
   };
 
   const handleImageUpload = (result) => {
-    setHostedUrl(result.info.secure_url);
+    setImageUrl(result.info.secure_url);
     setFileName(`${result.info.original_filename}.${result.info.format}`);
   };
 
@@ -94,16 +111,12 @@ export default function BookingPage() {
 
   const lengthOfStay = calculateLengthOfStay(checkIn, checkOut) || 1;
 
-  console.log(hostedUrl);
+  const { pending } = useFormStatus();
 
   return (
     <section className="min-h-screen sm:py-24 flex flex-col items-center sm:p-40">
       <div className="flex flex-col px-10  py-7 mt-9 gap-10 min-w-fit">
-        <div
-          className={`${
-            submit ? "hidden" : "block"
-          }  flex flex-row gap-10 justify-between`}
-        >
+        <div className={`flex flex-row gap-10 justify-between`}>
           <div className="space-y-4 w-1/2">
             <h1 className="uppercase font-poppins font-semibold text-center">
               Your Order
@@ -161,7 +174,7 @@ export default function BookingPage() {
               </div>
             </div>
           </div>
-          <Form className="flex flex-col  gap-4 w-1/2" onSubmit={handleSubmit}>
+          <form className="flex flex-col  gap-4 w-1/2" onSubmit={handleSubmit}>
             <h2 className="font-poppins font-semibold uppercase">
               enter your details
             </h2>
@@ -176,14 +189,18 @@ export default function BookingPage() {
                     *
                   </span>
                 </label>
+                {errors.name && (
+                  <p className="text-red-500 text-xs">{errors.name}</p>
+                )}
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   value={name}
+                  defaultValue={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full p-1 border-b-2 font-poppins text-xs px-0 border-gold bg-transparent outline-none"
                   placeholder="Enter Name"
-                  isRequired
                 />
               </div>
               <div className="space-y-1 row-start-2">
@@ -196,12 +213,16 @@ export default function BookingPage() {
                     *
                   </span>
                 </label>
+                {errors.KTP && (
+                  <p className="text-red-500 text-xs">{errors.KTP}</p>
+                )}
                 <input
                   type="number"
                   id="ktp"
+                  name="ktp"
                   value={KTP}
+                  defaultValue={KTP}
                   onChange={(e) => setKTP(e.target.value)}
-                  required
                   className="w-full p-1 border-b-2 font-poppins text-xs px-0 border-gold bg-transparent outline-none"
                   placeholder="Enter Identity Number (KTP)"
                 />
@@ -216,12 +237,15 @@ export default function BookingPage() {
                     *
                   </span>
                 </label>
+                {errors.phone && (
+                  <p className="text-red-500 text-xs">{errors.phone}</p>
+                )}
                 <input
                   type="number"
                   id="no-hp"
+                  name="phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  required
                   className="w-full p-1 border-b-2 font-poppins text-xs px-0 border-gold bg-transparent outline-none"
                   placeholder="Enter Phone Number"
                 />
@@ -268,12 +292,15 @@ export default function BookingPage() {
                         *
                       </span>
                     </label>
+                    {errors.checkin && (
+                      <p className="text-red-500 text-xs">{errors.checkin}</p>
+                    )}
                     <input
                       type="date"
                       id="check-in"
+                      name="checkin"
                       value={checkIn}
                       onChange={(e) => setCheckIn(e.target.value)}
-                      required
                       className="w-full p-1 border-b-2 font-poppins text-xs px-0 border-gold bg-transparent outline-none"
                       placeholder="Enter Check-Out Date"
                     />
@@ -288,12 +315,15 @@ export default function BookingPage() {
                         *
                       </span>
                     </label>
+                    {errors.checkout && (
+                      <p className="text-red-500 text-xs">{errors.checkout}</p>
+                    )}
                     <input
                       type="date"
                       id="check-out"
+                      name="checkout"
                       value={checkOut}
                       onChange={(e) => setCheckOut(e.target.value)}
-                      required
                       className="w-full p-1 border-b-2 font-poppins text-xs px-0 border-gold bg-transparent outline-none"
                       placeholder="Enter Check-Out Date"
                     />
@@ -310,12 +340,15 @@ export default function BookingPage() {
                     *
                   </span>
                 </label>
+                {errors.email && (
+                  <p className="text-red-500 text-xs">{errors.email}</p>
+                )}
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
                   className="w-full p-1 border-b-2 font-poppins text-xs px-0 border-gold bg-transparent outline-none"
                   placeholder="Enter Email"
                 />
@@ -370,8 +403,9 @@ export default function BookingPage() {
               type="submit"
               className="font-poppins hover:bg-transparent hover:border-[1px] hover:border-gold hover:text-gold text-white px-4 py-2 bg-gold uppercase w-fit text-sm mx-auto my-2"
               onClick={hanndleButton}
+              disabled={pending}
             >
-              booking
+              {pending ? "loading..." : "booking"}
             </button>
             <button
               type="button"
@@ -381,9 +415,9 @@ export default function BookingPage() {
             >
               send email
             </button>
-          </Form>
+          </form>
         </div>
-        <div className={`${submit ? "block" : "hidden"} space-y-5`}>
+        {/* <div className={`${submit ? "block" : "hidden"} space-y-5`}>
           <div className="flex flex-row justify-between">
             <div className="flex flex-col">
               <h1 className="font-libre_baskerville text-xl uppercase">
@@ -451,7 +485,7 @@ export default function BookingPage() {
             </div>
           </div>
           <button onClick={hanndleButton}>download invoice</button>
-        </div>
+        </div> */}
       </div>
       <button
         onClick={() => router.push(`/rooms/${slug}`)}

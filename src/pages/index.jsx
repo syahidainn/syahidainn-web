@@ -76,7 +76,7 @@ export default function Home() {
           </div>
         </div>
         <Image
-          src="/assets/syahidainn.jpg"
+          src="https://res.cloudinary.com/dbvyywl6v/image/upload/v1740667239/syahidainn-assets/syahidainn_eqam37.jpg"
           alt="gedung syahidainn"
           width={6464}
           height={4320}
