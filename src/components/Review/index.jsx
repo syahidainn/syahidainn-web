@@ -59,7 +59,7 @@ export default function Review() {
 
   return (
     <div
-      className="relative bg-cover bg-bottom  py-16 w-full border-b-4  border-[#AE9578]"
+      className="relative bg-cover bg-bottom  py-16 w-full "
       style={{
         backgroundImage: `url(${reviews[currentIndex].backgroundImage})`,
         transition: "background-image 1s ease-in-out",

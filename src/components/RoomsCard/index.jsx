@@ -14,7 +14,7 @@ export default function RoomsCard({
   const router = useRouter();
 
   return (
-    <div className={`flex flex-col md:flex-row gap-8 md:gap-24 ${classname}`}>
+    <div className={`flex flex-col md:flex-row  gap-8 md:gap-24 ${classname}`}>
       <div className="w-[600px] object-cover aspect-[9/6]">
         <Image
           src={imageCard}
@@ -23,9 +23,11 @@ export default function RoomsCard({
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="space-y-6 md:space-y-12">
-        <h1 className="text-2xl font-libre_baskerville">{tipe}</h1>
-        <p className="max-w-full md:max-w-lg text-base font-poppins">{desc}</p>
+      <div className="space-y-4 md:space-y-10 my-auto">
+        <h1 className="text-3xl font-libre_baskerville">{tipe}</h1>
+        <p className="max-w-full md:max-w-lg text-base font-light font-poppins">
+          {desc}
+        </p>
         <div className="flex flex-wrap gap-4">
           {logoFacility.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
