@@ -14,7 +14,7 @@ export default function Rooms() {
 
       {/*menampilkan deskripsi*/}
       <section>
-        <Container className="space-y-4">
+        <Container className="space-y-4 mb-10">
           <div className="flex flex-col items-center">
             <div className="flex flex-col w-fit">
               <h1 className="text-3xl text-center font-libre_baskerville">
