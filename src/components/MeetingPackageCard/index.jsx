@@ -1,18 +1,12 @@
 import { useState } from 'react';
 
-export default function MeetingPackageCard({ title, price, duration, inclusions, pricePer }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
-  };
-
+export default function MeetingPackageCard({ title, price, duration, inclusions, pricePer, isExpanded, onExpand }) {
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg">
       {/* Header dengan tombol dropdown */}
       <div 
         className="flex justify-between items-center mb-6 cursor-pointer" 
-        onClick={toggleExpand}
+        onClick={onExpand}
       >
         <h3 className={`text-2xl font-libre_baskerville ${isExpanded ? 'font-semibold' : ''}`}>{title}</h3>
         <div className={`w-12 h-12 rounded-full bg-[#AE9578] flex items-center justify-center transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>

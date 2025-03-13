@@ -89,7 +89,7 @@ export default function MeetingsCard({ classname, title, imgSrc }) {
           </p>
         </div>
         <div>
-        <button className="p-4 bg-white text-[#AE9578] font-semibold mt-5 border-[#AE9578] border-2">
+        <button className="p-4 bg-white text-[#AE9578] font-semibold mt-5 border-[#AE9578] border-2 hover:bg-[#AE9578] hover:text-white transition-colors">
           Book Now
         </button>
         </div>

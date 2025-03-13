@@ -27,6 +27,13 @@ export default function RoomsItem({
     { image: "VIP Room.jpg", type: "VIP Room" },
   ];
 
+  const coverImages = {
+    "Deluxe Double": "Double.jpg",
+    "Deluxe Triple": "Deluxe Triple.jpg",
+    "Superior Room": "Superior Room.jpg",
+    "VIP Room": "VIP Room.jpg",
+  };
+
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? rooms.length - 1 : prevIndex - 1
@@ -45,12 +52,14 @@ export default function RoomsItem({
     <div className="flex flex-col min-h-screen">
       {/* Section untuk cover kamar */}
       <section className="relative flex flex-col justify-center h-screen w-full">
-        <Image
-          src={`/assets/${imageCard}`}
-          layout="fill"
-          objectFit="cover"
-          className="w-full h-full"
-        />
+        <div className="absolute inset-0">
+          <Image
+            src={`/assets/${coverImages[tipe]}`}
+            layout="fill"
+            objectFit="cover"
+            className="w-full h-full"
+          />
+        </div>
         <div className="bg-black/30 w-full absolute flex items-center justify-center" />
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extralight font-poppins text-white absolute bottom-10 sm:bottom-20 left-0 right-0 text-center">
           {tipe}
