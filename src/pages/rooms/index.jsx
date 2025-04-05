@@ -1,93 +1,50 @@
+import Container from "@/components/Container";
+import Hero from "@/components/Hero";
 import Review from "@/components/Review";
 import RoomsCard from "@/components/RoomsCard";
+import { rooms } from "@/lib/constants";
+import Image from "next/image";
 
 export default function Rooms() {
-  const lists = [
-    {
-      id: 1,
-      imageCard: "/assets/Deluxe Double.png",
-      tipe: "Deluxe Double",
-      desc: "Nikmati pengalaman menginap yang menenangkan di Deluxe Double Room, tempat di mana kesederhanaan bertemu dengan keanggunan...",
-      logoFacility: "/assets/icon/bed.png",
-      logoFacility1: "/assets/icon/guest.png",
-      logoFacility2: "/assets/icon/luas.png",
-      textFacility: "Twin Bed",
-      textFacility1: "2 Guests",
-      textFacility2: "42㎡ – 45㎡"
-    },
-    {
-      id: 2,
-      imageCard: "/assets/Deluxe Triple.png",
-      tipe: "Deluxe Triple",
-      desc: "Memberikan pengalaman menginap yang tak terlupakan dengan fasilitas unggulan dengan tiga tempat tidur yang nyaman dan...",
-      logoFacility: "/assets/icon/bed.png",
-      logoFacility1: "/assets/icon/guest.png",
-      logoFacility2: "/assets/icon/luas.png",
-      textFacility: "Three Bed",
-      textFacility1: "3 Guests",
-      textFacility2: "42㎡ – 45㎡"
-    },
-
-    {
-      id:"3",
-      imageCard: "/assets/Superior Double.png",
-      tipe: "Superior Double",
-      desc:"Pilihan ideal bagi Anda yang menginginkan kenyamanan berkelas dengan harga yang bersaing. Superior Room dirancang dengan gaya modern...",
-      logoFacility: "/assets/icon/bed.png",
-      logoFacility1: "/assets/icon/guest.png",
-      logoFacility2: "/assets/icon/luas.png",
-      textFacility: "Twin Bed",
-      textFacility1: "2 Guests",
-      textFacility2: "42㎡ – 45㎡"
-    },
-
-    {
-      id:"4",
-      imageCard: "/assets/VIP Room.png",
-      tipe: "VIP Room",
-      desc:"Menghadirkan kemewahan untuk memberikan pengalaman eksklusif bagi Anda yang menginginkan kenyamanan dan layanan terbaik. Dengan desain...",
-      logoFacility: "/assets/icon/bed.png",
-      logoFacility1: "/assets/icon/guest.png",
-      logoFacility2: "/assets/icon/luas.png",
-      textFacility: "King Bed",
-      textFacility1: "2 Guests",
-      textFacility2: "42㎡ – 45㎡"
-    }
-  ];
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="bg-gray-300 h-72 w-full">Hero</div>
-      <main className="p-8 pb-20 flex flex-col gap-16 sm:p-32">
-        <div className="flex flex-col gap-10">
-          <h1 className="text-5xl text-center">Rooms</h1>
-          {lists.map((list) => (
+    //tampilan halaman rooms
+    <div className="flex flex-col min-h-screen font-poppins bg-[#F9F9F9] text-black">
+      <Hero name="Our Rooms" img="/assets/Superior Double 2.jpg" />
+      {/* <div className="p-4 md:p-8 pb-20 flex flex-col gap-8 md:gap-16 sm:p-8 md:pb-32"> */}
+
+      {/*menampilkan deskripsi*/}
+      <section>
+        <Container className="space-y-4 mb-10">
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col w-fit">
+              <h1 className="text-3xl text-center font-libre_baskerville">
+                Our Rooms
+              </h1>
+              <hr className="w-1/2 mx-auto border-black my-2" />
+            </div>
+            {/* <p className="sm font-poppins text-center max-w-xl mt-4">
+              Nikmati pengalaman menginap yang nyaman, elegan, dan mewah dalam
+              setiap pilihan kamar kami dengan fasilitas yang dirancang untuk
+              menciptakan suasana menyenangkan dan berkesan.
+            </p> */}
+          </div>
+          {rooms.map((room) => (
             <RoomsCard
-              id={list.id}
-              imageCard={list.imageCard}
-              tipe={list.tipe}
-              desc={list.desc}
-              logoFacility={list.logoFacility}
-              logoFacility1={list.logoFacility1}
-              logoFacility2={list.logoFacility2}
-              textFacility={list.textFacility}
-              textFacility1={list.textFacility1}
-              textFacility2={list.textFacility2}
+              key={room.id}
+              id={room.id}
+              imageCard={room.imageCard}
+              tipe={room.tipe}
+              desc={room.desc}
+              logoFacility={room.logoFacility}
+              textFacility={room.textFacility}
             />
           ))}
-          {
-          /* <RoomsCard
-            classname={"flex-row-reverse justify-between"}
-            imageCard={"/assets/room2.jpg"}
-          />
-          <RoomsCard />
-          <RoomsCard classname={"flex-row-reverse justify-between"} /> */}
-        </div>
-        <div>
-          <Review />
-        </div>
-        <div>Gallery</div>
-      </main>
+        </Container>
+      </section>
+
+      {/*menampilkan review*/}
+      <Review />
     </div>
+    // </div>
   );
 }

@@ -1,30 +1,32 @@
 import RoomsItem from "@/components/RoomsItem";
+import { rooms } from "@/lib/constants";
 import { useParams } from "next/navigation";
 
 export default function RoomsPage() {
   const params = useParams();
   const slug = params?.slug;
 
-  const index = parseInt(slug) - 1;
+  // Filter ruangan berdasarkan slug
+  const selectedRoom = rooms.find((room) => room.id === parseInt(slug));
 
-  const detailRoom = [
-    {
-      id: { slug },
-      tipe: "delux",
-    },
-    {
-      id: { slug },
-      tipe: "vip",
-    },
-  ];
-
-  console.log(typeof index);
-  console.log(typeof slug);
   return (
-    <div>
-      <div id={slug}>
-        <RoomsItem tipe={detailRoom[slug - 1]?.tipe} />
-      </div>
+    <div id={slug} className="">
+      {/* Menampilkan RoomsItem saja */}
+      {selectedRoom && (
+        <RoomsItem
+          id={selectedRoom.id}
+          tipe={selectedRoom.tipe}
+          imageCard={selectedRoom.imageCard}
+          desc={selectedRoom.desc}
+          katakata={selectedRoom.katakata}
+          logoFacility={selectedRoom.logoFacility}
+          textFacility={selectedRoom.textFacility}
+          harga={selectedRoom.harga} // Menambahkan prop price
+          facilities={selectedRoom.facilities} // Menambahkan prop facilities
+          facilityLogos={selectedRoom.facilityLogos} // Menambahkan prop facilityLogos
+          galleryImages={selectedRoom.galleryImages} // Menambahkan prop galleryImages
+        />
+      )}
     </div>
   );
 }
