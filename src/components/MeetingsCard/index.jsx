@@ -22,56 +22,93 @@ export default function MeetingsCard({ classname, title, imgSrc }) {
       </div>
       <div className="space-y-6">
         <h1 className="text-4xl font-libre_baskerville">{title}</h1>
-        <hr className="bg-black h-1" style={{ width: `${title.length * 21}px` }} />
+        <hr
+          className="bg-black h-1"
+          style={{ width: `${title.length * 21}px` }}
+        />
         <div className="mt-6">
           {title === "Ruang Madya I" ? (
             <div className="flex flex-row gap-10 mt-10">
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/clock.svg" alt="icon" className="inline-block mr-2 w-6" />
+                <img
+                  src="/assets/icon/clock.svg"
+                  alt="icon"
+                  className="inline-block mr-2 w-6"
+                />
                 8 Hours of Use
               </p>
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/max person.svg" alt="icon" className="inline-block mr-2 w-8" />
+                <img
+                  src="/assets/icon/max person.svg"
+                  alt="icon"
+                  className="inline-block mr-2 w-8"
+                />
                 Max 50 Person
               </p>
             </div>
           ) : title === "Ruang Madya II" ? (
             <div className="flex flex-row gap-10 mt-10">
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/clock.svg" alt="icon" className="inline-block mr-2 w-6" />
+                <img
+                  src="/assets/icon/clock.svg"
+                  alt="icon"
+                  className="inline-block mr-2 w-6"
+                />
                 8 Hours of Use
               </p>
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/max person.svg" alt="icon" className="inline-block mr-2 w-8" />
+                <img
+                  src="/assets/icon/max person.svg"
+                  alt="icon"
+                  className="inline-block mr-2 w-8"
+                />
                 Max 50 Person
               </p>
             </div>
           ) : title === "Ruang Madya III" ? (
             <div className="flex flex-row gap-10 mt-10">
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/clock.svg" alt="icon" className="inline-block mr-2 w-6" />
+                <img
+                  src="/assets/icon/clock.svg"
+                  alt="icon"
+                  className="inline-block mr-2 w-6"
+                />
                 8 Hours of Use
               </p>
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/max person.svg" alt="icon" className="inline-block mr-2 w-8" />
+                <img
+                  src="/assets/icon/max person.svg"
+                  alt="icon"
+                  className="inline-block mr-2 w-8"
+                />
                 Max 50 Person
               </p>
             </div>
           ) : title === "Ruang Kelas" ? (
             <div className="flex flex-row gap-10 mt-10">
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/clock.svg" alt="icon" className="inline-block mr-2 w-6" />
+                <img
+                  src="/assets/icon/clock.svg"
+                  alt="icon"
+                  className="inline-block mr-2 w-6"
+                />
                 8 Hours of Use
               </p>
               <p className="max-w-lg text-lg font-poppins">
-                <img src="/assets/icon/max person.svg" alt="icon" className="inline-block mr-2 w-8" />
+                <img
+                  src="/assets/icon/max person.svg"
+                  alt="icon"
+                  className="inline-block mr-2 w-8"
+                />
                 Max 50 Person
-              </p>          
-              </div>
+              </p>
+            </div>
           ) : null}
         </div>
         <div className="mt-10">
-          <h2 className="font-semibold text-lg font-poppins mb-2 mt-10">Facilities</h2>
+          <h2 className="font-semibold text-lg font-poppins mb-2 mt-10">
+            Facilities
+          </h2>
           <div className="flex flex-row gap-4 text-1xl font-poppins mt-5">
             <ul className="list-disc list-inside space-y-2 mr-10">
               <li className="marker:text-2xl font-poppins">AC</li>
@@ -89,9 +126,9 @@ export default function MeetingsCard({ classname, title, imgSrc }) {
           </p>
         </div>
         <div>
-        <button className="p-4 bg-white text-[#AE9578] font-semibold mt-5 border-[#AE9578] border-2">
-          Book Now
-        </button>
+          <button className="duration-300 delay-100 p-4 bg-white text-[#AE9578] font-semibold mt-5 border-[#AE9578] border-2">
+            Book Now
+          </button>
         </div>
       </div>
     </div>

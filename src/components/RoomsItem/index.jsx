@@ -148,7 +148,7 @@ export default function RoomsItem({
               </h2>
               <div className="flex justify-center sm:justify-start">
                 <button
-                  className="mt-4 px-6 py-2  border border-[#AE9578] text-[#AE9578] hover:bg-[#AE9578] hover:text-white font-poppins"
+                  className="duration-300 delay-100 mt-4 px-6 py-2  border border-[#AE9578] text-[#AE9578] hover:bg-[#AE9578] hover:text-white font-poppins"
                   type="button"
                   onClick={() => Router.push(`/booking/${id}`)}
                 >
@@ -261,7 +261,10 @@ export default function RoomsItem({
               liburan yang sempurna.
             </p>
             <div className="flex flex-row gap-5 justify-center sm:justify-start">
-              <button onClick={handlePrev} className="text-3xl sm:text-5xl">
+              <button
+                onClick={handlePrev}
+                className="duration-300 delay-100 text-3xl sm:text-5xl"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -277,7 +280,10 @@ export default function RoomsItem({
                   />
                 </svg>
               </button>
-              <button onClick={handleNext} className="text-3xl sm:text-5xl">
+              <button
+                onClick={handleNext}
+                className="duration-300 delay-100 text-3xl sm:text-5xl"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

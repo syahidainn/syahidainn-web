@@ -63,7 +63,7 @@ export default function Navbar() {
           Gallery
         </Link>
       </div>
-      <button className="uppercase bg-primary text-white leading-loose p-2 px-3 lg:ml-auto ml-0 text-xs font-normal">
+      <button className="duration-300 delay-100 uppercase bg-primary text-white leading-loose p-2 px-3 lg:ml-auto ml-0 text-xs font-normal">
         Book Now
       </button>
     </div>

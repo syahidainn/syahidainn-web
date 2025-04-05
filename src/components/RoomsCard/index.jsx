@@ -42,11 +42,11 @@ export default function RoomsCard({
           ))}
         </div>
         <div className="inline-flex gap-6 items-center">
-          <button className="hover:bg-white hover:text-[#AE9578] mx-auto text-sm p-4 py-3 font-poppins font-semibold border-[#AE9578] border-2 text-white bg-[#AE9578]">
+          <button className="duration-300 delay-100 hover:bg-white hover:text-[#AE9578] mx-auto text-sm p-4 py-3 font-poppins font-semibold border-[#AE9578] border-2 text-white bg-[#AE9578]">
             Book Now
           </button>
           <button
-            className="mx-auto text-sm py-1 hover:text-[#AE9578] hover:border-[#AE9578] font-poppins font-semibold h-fit border-black border-b-2 text-black"
+            className="duration-300 delay-100 mx-auto text-sm py-1 hover:text-[#AE9578] hover:border-[#AE9578] font-poppins font-semibold h-fit border-black border-b-2 text-black"
             onClick={() => router.push(`/rooms/${id}`)}
           >
             Explore Rooms

@@ -263,7 +263,7 @@ export default function BookingPage() {
                       <button
                         type="button"
                         onClick={decreaseButton}
-                        className="bg-gold w-5 h-5 text-white aspect-square flex items-center  self-end justify-center"
+                        className="duration-300 delay-100 bg-gold w-5 h-5 text-white aspect-square flex items-center  self-end justify-center"
                       >
                         -
                       </button>
@@ -276,7 +276,7 @@ export default function BookingPage() {
                       <button
                         type="button"
                         onClick={increaseButton}
-                        className="bg-gold w-5 h-5 text-white aspect-square flex items-center  self-end justify-center"
+                        className="duration-300 delay-100 bg-gold w-5 h-5 text-white aspect-square flex items-center  self-end justify-center"
                       >
                         +
                       </button>
@@ -401,7 +401,7 @@ export default function BookingPage() {
             </div>
             <button
               type="submit"
-              className="font-poppins hover:bg-transparent hover:border-[1px] hover:border-gold hover:text-gold text-white px-4 py-2 bg-gold uppercase w-fit text-sm mx-auto my-2"
+              className="duration-300 delay-100 font-poppins hover:bg-transparent hover:border-[1px] hover:border-gold hover:text-gold text-white px-4 py-2 bg-gold uppercase w-fit text-sm mx-auto my-2"
               onClick={hanndleButton}
               disabled={pending}
             >
@@ -489,7 +489,7 @@ export default function BookingPage() {
       </div>
       <button
         onClick={() => router.push(`/rooms/${slug}`)}
-        className={`font-poppins text-sm flex w-fit items-center my-4`}
+        className={`duration-300 delay-100 font-poppins text-sm flex w-fit items-center my-4`}
       >
         <i className="bx bx-left-arrow-alt text-gold text-2xl items-center" />
         Back to room

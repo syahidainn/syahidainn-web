@@ -86,7 +86,7 @@ export default function Review() {
           {/*navigation and button*/}
           <button
             onClick={prevSlide}
-            className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none bg-transparent bg-opacity-30 hover:bg-opacity-50 text-white p-2 md:p-3 rounded-full"
+            className="duration-300 delay-100 absolute top-0 start-0 z-30 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none bg-transparent bg-opacity-30 hover:bg-opacity-50 text-white p-2 md:p-3 rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ export default function Review() {
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none bg-transparent bg-opacity-30 hover:bg-opacity-50 text-white p-2 md:p-3 rounded-full"
+            className="duration-300 delay-100 absolute top-0 end-0 z-30 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none bg-transparent bg-opacity-30 hover:bg-opacity-50 text-white p-2 md:p-3 rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
